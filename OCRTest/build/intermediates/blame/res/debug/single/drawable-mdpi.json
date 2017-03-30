@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-mdpi/background.png",
+        "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-mdpi/background.png"
+    },
+    {
+        "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-mdpi/shutter.png",
+        "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-mdpi/shutter.png"
+    },
+    {
+        "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-mdpi/shutter_bg_pressed.png",
+        "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-mdpi/shutter_bg_pressed.png"
+    },
+    {
+        "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-mdpi/shutter_bg.png",
+        "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-mdpi/shutter_bg.png"
+    },
+    {
+        "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-mdpi/_ic_launcher.png",
+        "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-mdpi/_ic_launcher.png"
+    },
+    {
+        "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-mdpi/ic_launcher.png",
+        "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-mdpi/shutter_pressed.png",
+        "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-mdpi/shutter_pressed.png"
+    }
+]

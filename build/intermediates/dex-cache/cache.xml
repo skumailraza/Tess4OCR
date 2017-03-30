@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/skrk/.android/build-cache/cdeddc6322e52d6836b6a4d2fcde9fa70a059357/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="360568f833daa8f15e88e7192d50a52e7b0b4aad">
+        <dex dex="/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/pre-dexed/debug/classes_69c54b1a735a0a6f527c773e670b6329d62b887e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/libs/microsoft-translator-java-api-0.6-mod.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="176df3274c901602fe2b6c345326a6990be557b9">
+        <dex dex="/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/pre-dexed/debug/microsoft-translator-java-api-0.6-mod_468b6c6f5c3a8084f263047f4d30603fa9d647a9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/libs/jtar-1.0.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b6ff62805312c9384c2f4cc21a6367b74fd2bbd7">
+        <dex dex="/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/pre-dexed/debug/jtar-1.0.4_7528878e1f8099dcd60a49219c3aba78e6fe5d03.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/libs/pl2303driver.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3ba27649469c1d71e1a54c0fd66a0d94856df555">
+        <dex dex="/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/pre-dexed/debug/pl2303driver_ca0d80045544775f4182e59c4c1d12b6eb7e955a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/libs/google-api-translate-java-0.98-mod2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2eda6905f8b719be023772e5c738d93c6b77210b">
+        <dex dex="/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/pre-dexed/debug/google-api-translate-java-0.98-mod2_c77570dafe9ae364b7a4fbf736d1efbd6869105f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/libs/json_simple-1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5e303a03d04e6788dddfa3655272580ae0fc13bb">
+        <dex dex="/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/pre-dexed/debug/json_simple-1.1_5c3becb7b9bf1818f0bb3c0802f217b8d535fa14.jar" />
+    </item>
+
+</items>

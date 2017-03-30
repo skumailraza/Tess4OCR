@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-ldpi/ic_launcher.png",
+        "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-ldpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-ldpi/_ic_launcher.png",
+        "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-ldpi/_ic_launcher.png"
+    },
+    {
+        "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-ldpi/background.png",
+        "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-ldpi/background.png"
+    }
+]
