@@ -1,4 +1,4 @@
-#Wed Mar 29 20:18:39 PKT 2017
-base.0=/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+#Fri Apr 07 23:39:17 PKT 2017
+base.0=/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
-file.0=/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+file.0=/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

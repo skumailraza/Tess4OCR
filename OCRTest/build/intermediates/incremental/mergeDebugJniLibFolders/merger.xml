@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/debug/jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/debug/jniLibs"/></dataSet></merger>

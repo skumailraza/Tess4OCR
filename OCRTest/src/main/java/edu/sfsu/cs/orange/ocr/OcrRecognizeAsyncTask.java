@@ -87,6 +87,7 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
       if (textResult == null || textResult.equals("")) {
         return false;
       }
+
       ocrResult = new OcrResult();
       ocrResult.setWordConfidences(baseApi.wordConfidences());
       ocrResult.setMeanConfidence( baseApi.meanConfidence());
@@ -122,6 +123,19 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
     }
     timeRequired = System.currentTimeMillis() - start;
     ocrResult.setBitmap(bitmap);
+    String[] temp = textResult.split("\n");
+    if(temp.length!=0)
+      textResult="";
+    for(int i=0;i<temp.length;i++)
+    {
+      if(temp[i].length()!=0){
+        if(i<temp.length-1){
+          textResult = textResult + temp[i] + "\n";
+        }
+        else
+          textResult = textResult + temp[i];
+      }
+    }
     ocrResult.setText(textResult);
     ocrResult.setRecognitionTimeRequired(timeRequired);
     return true;

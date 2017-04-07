@@ -1,4 +1,0 @@
-#Wed Mar 29 13:33:59 PKT 2017
-base.0=/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6
-renamed.0=classes.dex
-file.0=/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex

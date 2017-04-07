@@ -20,6 +20,7 @@ ADDED from /Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/AndroidManifes
 uses-sdk
 ADDED from /Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/AndroidManifest.xml:25:3-70
 MERGED from [com.rmtheis:tess-two:5.4.0] /Users/skrk/.android/build-cache/cdeddc6322e52d6836b6a4d2fcde9fa70a059357/output/AndroidManifest.xml:22:5-24:41
+MERGED from [OCFNR:openCVLibrary310:unspecified] /Users/skrk/Desktop/Repos/repos/OCFNR/openCVLibrary310/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
 	android:targetSdkVersion
 		ADDED from /Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/AndroidManifest.xml:25:39-68
 		INJECTED from /Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/AndroidManifest.xml

@@ -1,7 +1,15 @@
 [
     {
+        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_launcher.png",
+        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/drawable-xxxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-xxxhdpi/background.png",
         "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-xxxhdpi/background.png"
+    },
+    {
+        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/drawable-xxxhdpi/background.png",
+        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/drawable-xxxhdpi/background.png"
     },
     {
         "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_launcher.png",
