@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by skrk on 4/7/17.
+ * Created by Kumail on 4/7/17.
  */
 
 public class AddressParser {
@@ -65,13 +65,20 @@ public class AddressParser {
     public void stripZip() {
         if (text == null)
             return;
-
+        //Scanner scanner;
         Scanner scanner = new Scanner(lines[lines.length - 1]);
         zip = scanner.findInLine("\\d{3,5}(?:[-\\s]\\d{4})?");
         if (zip == null) {
             scanner = new Scanner(lines[lines.length - 2]);
             zip = scanner.findInLine("\\d{3,5}(?:[-\\s]\\d{4})?");
         }
+//            for(int i = 0; i < lines.length; i++){
+//            if(zip != null)
+//                break;
+//            scanner= new Scanner((lines[i]));
+//            zip = scanner.findInLine("\\d{3,5}(?:[-\\s]\\d{4})?");
+//
+//        }
     }
 
     public void stripCity() {
@@ -79,10 +86,22 @@ public class AddressParser {
             return;
         Scanner scanner = new Scanner(lines[lines.length - 1]);
         city = scanner.findInLine("^[A-Za-z]+(?:[\\s'-]+[A-Za-z]+)*(?=[,]|\\s+\\b)");
+        //city = scanner.findInLine("^([a-zA-Z\\\\u0080-\\\\u024F]+(?:. |-| |'))*[a-zA-Z\\\\u0080-\\\\u024F]");
         if (city == null) {
             scanner = new Scanner((lines[lines.length - 2]));
             city = scanner.findInLine("^[A-Za-z]+(?:[\\s'-]+[A-Za-z]+)*(?=[,]|\\s+\\b)");
+            //city = scanner.findInLine("^([a-zA-Z\\\\u0080-\\\\u024F]+(?:. |-| |'))*[a-zA-Z\\\\u0080-\\\\u024F]");
+
         }
+//        Scanner scanner;
+//        for(int i = 0; i < lines.length; i++){
+//            if(city != null)
+//                break;
+//            scanner= new Scanner((lines[i]));
+//            //city = scanner.findInLine("^((\\d{3}-|\\(\\d{3}\\)\\s?)?\\d{3}-|^\\d{3}(\\.)?\\d{3}\\3)\\d{4}$");
+//            city = scanner.findInLine("^([a-zA-Z\\u0080-\\u024F]+(?:. |-| |'))*[a-zA-Z\\u0080-\\u024F]*$");
+//
+//        }
     }
 
     public int getLineNo() {
@@ -138,10 +157,10 @@ public class AddressParser {
         if (text == null)
             return;
         Scanner scanner;
-        for(int i = 0; i < lines.length; i++){
-            if(phone != null)
+        for (int i = 0; i < lines.length; i++) {
+            if (phone != null)
                 break;
-            scanner= new Scanner((lines[i]));
+            scanner = new Scanner((lines[i]));
             phone = scanner.findInLine("^((\\d{3}-|\\(\\d{3}\\)\\s?)?\\d{3}-|^\\d{3}(\\.)?\\d{3}\\3)\\d{4}$");
 
         }
@@ -163,7 +182,7 @@ public class AddressParser {
     public void stripAttn() {
         /**** Written by Basit Bhai ****/
 
-        if(text == null)
+        if (text == null)
             return;
 
 
@@ -209,25 +228,26 @@ public class AddressParser {
             company = Company1[0];
         }
 
-        //name = name.toUpperCase();
+
+        if (name != null)
+            name = name.toUpperCase();
 
     }
 
-    public void stripAddress(){
+    public void stripAddress() {
         if (text == null)
             return;
 
         String[] Address1 = new String[2];
         String Address;
-        int a1 =0;
+        int a1 = 0;
         String AddressRegex = "\\brd\\b|\\brm\\b|\\bave\\b|\\bview\\b|\\bste\\b|\\bdr\\b|\\bst\\b|\\bsuite\\b|\\bterrace\\b|\\bln\\b|\\broad\\b|\\bfw\\b|\\bct\\b|\\bhighway\\b|\\bcircle\\b|\\bdrive\\b|\\bpark\\b|\\bavenue\\b|\\bsq\\b|\\bpi\\b|\\bapt\\b|\\bcourt\\b|\\bstreet\\b|\\bunit\\b|\\brd\\W|\\brm\\W|\\bave\\W|\\bdr\\W|\\bst\\W|\\bln\\W|\\bfw\\W|\\bct\\W|\\bsq\\W|\\bpi\\W|\\bapt\\W|\\brd\\W|\\brm\\W|\\bave\\W|\\bview\\W|\\bste\\W|\\bdr\\W|\\bst\\W|\\bsuite\\W|\\bterrace\\W|\\bln\\W|\\broad\\W|\\bfw\\W|\\bct\\W|\\bhighway\\W|\\bcircle\\W|\\bdrive\\W|\\bpark\\W|\\bavenue\\W|\\bsq\\W|\\bpi\\W|\\bapt\\W|\\bcourt\\W|\\bstreet\\W|\\bunit\\W";
         String AddressRegex1 = "\\d+";
         String AddressRegexPOBOX = "\\bpo box\\b";
         Pattern Addresspattern1 = Pattern.compile(AddressRegex1);
         Pattern Addresspattern = Pattern.compile(AddressRegex);
         Pattern AddresspatternPOBOX = Pattern.compile(AddressRegexPOBOX);
-        for (int i=0 ; i<lines.length-1;i++)
-        {
+        for (int i = 0; i < lines.length - 1; i++) {
             Matcher Addressmatcher = Addresspattern.matcher(lines[i].toLowerCase());
             Matcher AddressmatcherPOBOX = AddresspatternPOBOX.matcher(lines[i].toLowerCase());
             if (Addressmatcher.find()) {
@@ -236,8 +256,7 @@ public class AddressParser {
                     Address1[a1] = lines[i];
                     a1 = a1 + 1;
                 }
-            }
-            else if (AddressmatcherPOBOX.find()){
+            } else if (AddressmatcherPOBOX.find()) {
                 Address1[0] = lines[i];
             }
         }
@@ -248,27 +267,27 @@ public class AddressParser {
 //        }
     }
 
-    private void checkNull(){
-        if(name == null)
+    private void checkNull() {
+        if (name == null)
             name = ".";
-        if(company == null)
+        if (company == null)
             company = ".";
-        if(streetAddress1 == null)
+        if (streetAddress1 == null)
             streetAddress1 = ".";
-        if(streetAddress2 == null)
+        if (streetAddress2 == null)
             streetAddress2 = ".";
-        if(city == null)
+        if (city == null)
             city = ".";
-        if(state == null)
+        if (state == null)
             state = ".";
-        if(zip == null)
+        if (zip == null)
             zip = ".";
-        if(phone == null)
+        if (phone == null)
             phone = ".";
 
     }
 
-    public String parseIt(){
+    public String parseIt() {
         if (text == null)
             return null;
         stripAttn();
@@ -289,7 +308,6 @@ public class AddressParser {
 
         return finalResult;
     }
-
 
 
     public static void main(String args[]) {
@@ -315,9 +333,9 @@ public class AddressParser {
 //                "PORTER TX 77365");
 //        //System.out.println(
 
-        addressParser.setText("US Tech Solutions\n" +
+        addressParser.setText("attn:Khurram Javed\n" + "US Tech Solutions\n" +
                 "10 Exchange Place, Suite 1820\n" +
-                "Jersey City, NJ 07302");
+                "Jersey City, NY 07302");
         addressParser.parseIt();
 
         System.out.println("Name: " + addressParser.name);
@@ -326,7 +344,7 @@ public class AddressParser {
         System.out.println("Address1: " + addressParser.streetAddress1);
         System.out.println("Address2: " + addressParser.streetAddress2);
         System.out.println("City: " + addressParser.city);
-        System.out.println("State: " +addressParser.state);
+        System.out.println("State: " + addressParser.state);
         System.out.println("Zip: " + addressParser.zip);
 
         //System.out.println(addressParser.parseIt());
@@ -338,6 +356,7 @@ public class AddressParser {
 
 
         //System.out.println(Address1[0]);
+        return;
 
 
     }
