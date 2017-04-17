@@ -1,4 +1,7 @@
-#Tue Apr 11 12:34:13 PKT 2017
-base.0=/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+#Sun Apr 16 16:41:10 PKT 2017
+base.0=/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_7177c263558ff887f7986542df62e4d4d177a52f
+renamed.1=classes2.dex
 renamed.0=classes.dex
-file.0=/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+file.1=/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d4d932dd4dc869b24c61b0c3c87e0543e70d3699/classes.dex
+base.1=/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d4d932dd4dc869b24c61b0c3c87e0543e70d3699
+file.0=/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_7177c263558ff887f7986542df62e4d4d177a52f/classes.dex

@@ -45,6 +45,7 @@ import com.googlecode.tesseract.android.TessBaseAPI;
 
 import org.opencv.android.OpenCVLoader;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.util.regex.Matcher;
@@ -185,6 +186,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
      * Destination filename for orientation and script detection (OSD) data.
      */
     static final String OSD_FILENAME_BASE = "osd.traineddata";
+
 
     /**
      * Minimum mean confidence score necessary to not reject single-shot OCR result. Currently unused.
@@ -915,6 +917,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
                     //writeText(outputStream, "\t");
                     mKbWedge.Write("\t");
                 }
+
+
 
                 // try to match last line against city+state+zip pattern
                 // GARDINER NY 12525-5157

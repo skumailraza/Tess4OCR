@@ -1,13 +1,5 @@
 [
     {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/F:\\repos\\ocfnr\\OCRTest\\build\\intermediates\\res\\merged\\debug\\raw\\beep.ogg",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/F:\\repos\\ocfnr\\OCRTest\\src\\main\\res\\raw\\beep.ogg"
-    },
-    {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/raw/beep.ogg",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/raw/beep.ogg"
-    },
-    {
         "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/raw/beep.ogg",
         "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/raw/beep.ogg"
     }

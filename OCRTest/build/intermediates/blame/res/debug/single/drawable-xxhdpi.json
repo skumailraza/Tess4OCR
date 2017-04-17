@@ -1,23 +1,11 @@
 [
     {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/drawable-xxhdpi/_appicon.png",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/drawable-xxhdpi/_appicon.png"
-    },
-    {
         "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-xxhdpi/_appicon.png",
         "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-xxhdpi/_appicon.png"
     },
     {
         "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-xxhdpi/background.png",
         "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-xxhdpi/background.png"
-    },
-    {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_launcher.png",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/drawable-xxhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/drawable-xxhdpi/background.png",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/drawable-xxhdpi/background.png"
     },
     {
         "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_launcher.png",

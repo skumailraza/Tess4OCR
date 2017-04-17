@@ -30,10 +30,20 @@ import com.googlecode.leptonica.android.ReadFile;
 import com.googlecode.tesseract.android.ResultIterator;
 import com.googlecode.tesseract.android.TessBaseAPI;
 import com.googlecode.tesseract.android.TessBaseAPI.PageIteratorLevel;
+import org.opencv.core.*;
+import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
+import org.opencv.imgproc.Imgproc.*;
+import org.opencv.android.Utils;
+
+import static java.lang.Math.sqrt;
+import static org.opencv.core.CvType.CV_64F;
+
 /**
  * Class to send OCR requests to the OCR engine in a separate thread, send a success/failure message,
  * and dismiss the indeterminate progress dialog box. Used for non-continuous mode OCR only.
  */
+
 final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
 
   //  private static final boolean PERFORM_FISHER_THRESHOLDING = false; 
@@ -56,10 +66,60 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
     this.height = height;
   }
 
+  public void binarizeShafait(Mat gray, Mat binary, int w, double k){
+    Imgproc imgproc = new Imgproc();
+    //gray.convertTo(gray,CV_64F);
+    Mat sum = new Mat();
+    Mat sumsq = new Mat();
+    gray.copyTo(binary);
+    int half_width = w >> 1;
+    imgproc.integral2(gray, sum, sumsq,CV_64F,CV_64F);
+    //imgproc.integral2(gray, sum, sumsq);
+
+    for(int i=0; i<gray.rows(); i ++){
+      for(int j=0; j<gray.cols(); j++){
+        int x_0 = (i > half_width) ? i - half_width : 0;
+        int y_0 = (j > half_width) ? j - half_width : 0;
+        int x_1 = (i + half_width >= gray.rows()) ? gray.rows() - 1 : i + half_width;
+        int y_1 = (j + half_width >= gray.cols()) ? gray.cols() - 1 : j + half_width;
+
+
+        double area = (x_1-x_0) * (y_1-y_0);
+        double mean = (sum.get(x_0,y_0)[0] + sum.get(x_1,y_1)[0] - sum.get(x_0,y_1)[0] - sum.get(x_1,y_0)[0]) / area;
+        double sq_mean = (sumsq.get(x_0,y_0)[0] + sumsq.get(x_1,y_1)[0] - sumsq.get(x_0,y_1)[0] - sumsq.get(x_1,y_0)[0]) / area;
+        double stdev = sqrt(sq_mean - (mean * mean));
+        double threshold = mean * (1 + k * ((stdev / 128) -1) );
+        if (gray.get(i,j)[0] > threshold)
+        binary.put(i,j,255,255,255,255);
+        else
+        binary.put(i,j,0,0,0,0);
+      }
+    }
+    for(int i=0; i<gray.rows(); i ++){
+      for(int j=0; j<gray.cols(); j++) {
+        Log.i("get", Double.toString(sum.get(i, j).length));
+        Log.i("get1", Double.toString(sum.get(i, j)[0]));
+        Log.i("get2", Double.toString(sum.get(i, j)[1]));
+        Log.i("get3", Double.toString(sum.get(i, j)[2]));
+        Log.i("get4", Double.toString(sum.get(i, j)[3]));
+      }
+    }
+        Imgcodecs.imwrite("/storage/emulated/0/DCIM/noor2.jpg",binary);
+  }
+
+
+
   @Override
   protected Boolean doInBackground(Void... arg0) {
     long start = System.currentTimeMillis();
     Bitmap bitmap = activity.getCameraManager().buildLuminanceSource(data, width, height).renderCroppedGreyscaleBitmap();
+    Mat imgShafait = new Mat();
+    Mat img = new Mat();
+    Utils.bitmapToMat(bitmap, img);
+
+    binarizeShafait(img,imgShafait,50,0.1);
+    //Imgcodecs.imwrite("/storage/emulated/0/DCIM/noor1.jpg",imgShafait);
+    Utils.matToBitmap(imgShafait,bitmap);
     String textResult;
 
     //      if (PERFORM_FISHER_THRESHOLDING) {
@@ -80,6 +140,8 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
 
     try {     
       baseApi.setImage(ReadFile.readBitmap(bitmap));
+
+
       textResult = baseApi.getUTF8Text();
       timeRequired = System.currentTimeMillis() - start;
 

@@ -1,26 +1,10 @@
 [
     {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/drawable/ic_launcher.png",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/drawable/ic_launcher.png"
-    },
-    {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/F:\\repos\\ocfnr\\OCRTest\\build\\intermediates\\res\\merged\\debug\\drawable\\shutter_button.xml",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/F:\\repos\\ocfnr\\OCRTest\\src\\main\\res\\drawable\\shutter_button.xml"
-    },
-    {
         "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable/shutter_button.xml",
         "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable/shutter_button.xml"
     },
     {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/F:\\repos\\ocfnr\\OCRTest\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher.png",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/F:\\repos\\ocfnr\\OCRTest\\src\\main\\res\\drawable\\ic_launcher.png"
-    },
-    {
         "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable/ic_launcher.png",
         "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable/ic_launcher.png"
-    },
-    {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/drawable/shutter_button.xml",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/drawable/shutter_button.xml"
     }
 ]

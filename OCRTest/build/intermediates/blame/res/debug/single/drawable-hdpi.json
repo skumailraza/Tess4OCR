@@ -8,20 +8,8 @@
         "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-hdpi/_ic_launcher.png"
     },
     {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/ic_launcher.png",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/drawable-hdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/shutter.png",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/drawable-hdpi/shutter.png"
-    },
-    {
         "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/shutter_bg.png",
         "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-hdpi/shutter_bg.png"
-    },
-    {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/shutter_bg.png",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/drawable-hdpi/shutter_bg.png"
     },
     {
         "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/shutter.png",
@@ -36,23 +24,7 @@
         "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-hdpi/background.png"
     },
     {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/shutter_pressed.png",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/drawable-hdpi/shutter_pressed.png"
-    },
-    {
         "merged": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/shutter_bg_pressed.png",
         "source": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/drawable-hdpi/shutter_bg_pressed.png"
-    },
-    {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/background.png",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/drawable-hdpi/background.png"
-    },
-    {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/_ic_launcher.png",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/drawable-hdpi/_ic_launcher.png"
-    },
-    {
-        "merged": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/shutter_bg_pressed.png",
-        "source": "/Users/skrk/Desktop/Ali/ocfnr/OCRTest/src/main/res/drawable-hdpi/shutter_bg_pressed.png"
     }
 ]
