@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+        "outputFile": "/Users/skrk/Documents/ocfnr/OCRTest/build/intermediates/res/merged/debug/values/values.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 159
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/arrays.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/arrays.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 1,
@@ -33,7 +33,7 @@
                     "endOffset": 1418
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/arrays.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/arrays.xml",
                     "position": {
                         "startLine": 166,
                         "startColumn": 1,
@@ -54,7 +54,7 @@
                     "endOffset": 3551
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/arrays.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/arrays.xml",
                     "position": {
                         "startLine": 106,
                         "startColumn": 1,
@@ -75,7 +75,7 @@
                     "endOffset": 4954
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/arrays.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/arrays.xml",
                     "position": {
                         "startLine": 46,
                         "startColumn": 1,
@@ -96,7 +96,7 @@
                     "endOffset": 5098
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/arrays.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/arrays.xml",
                     "position": {
                         "startLine": 34,
                         "startColumn": 4,
@@ -117,7 +117,7 @@
                     "endOffset": 5469
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/arrays.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/arrays.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -138,7 +138,7 @@
                     "endOffset": 8037
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/arrays.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/arrays.xml",
                     "position": {
                         "startLine": 204,
                         "startColumn": 1,
@@ -159,7 +159,7 @@
                     "endOffset": 9879
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/arrays.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/arrays.xml",
                     "position": {
                         "startLine": 354,
                         "startColumn": 1,
@@ -180,7 +180,7 @@
                     "endOffset": 11605
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/arrays.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/arrays.xml",
                     "position": {
                         "startLine": 279,
                         "startColumn": 1,
@@ -201,7 +201,7 @@
                     "endOffset": 12940
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/arrays.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/arrays.xml",
                     "position": {
                         "startLine": 401,
                         "startColumn": 1,
@@ -222,7 +222,7 @@
                     "endOffset": 13058
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/arrays.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/arrays.xml",
                     "position": {
                         "startLine": 40,
                         "startColumn": 1,
@@ -242,7 +242,7 @@
                     "endOffset": 13111
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/colors.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 2,
@@ -261,7 +261,7 @@
                     "endOffset": 13157
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/colors.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 2,
@@ -280,7 +280,7 @@
                     "endOffset": 13211
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/colors.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 2,
@@ -299,7 +299,7 @@
                     "endOffset": 13259
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/colors.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 2,
@@ -318,7 +318,7 @@
                     "endOffset": 13307
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/colors.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 25,
                         "startColumn": 2,
@@ -337,7 +337,7 @@
                     "endOffset": 13355
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/colors.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 26,
                         "startColumn": 2,
@@ -356,7 +356,7 @@
                     "endOffset": 13418
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/colors.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 27,
                         "startColumn": 2,
@@ -375,7 +375,7 @@
                     "endOffset": 13469
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/colors.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 2,
@@ -394,7 +394,7 @@
                     "endOffset": 13524
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/colors.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 2,
@@ -413,7 +413,7 @@
                     "endOffset": 13577
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/colors.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 30,
                         "startColumn": 2,
@@ -432,7 +432,7 @@
                     "endOffset": 13629
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/colors.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 31,
                         "startColumn": 2,
@@ -444,14 +444,14 @@
             },
             {
                 "to": {
-                    "startLine": 426,
+                    "startLine": 422,
                     "startColumn": 4,
-                    "startOffset": 13971,
+                    "startOffset": 13930,
                     "endColumn": 35,
-                    "endOffset": 14002
+                    "endOffset": 13961
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/ids.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/ids.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 2,
@@ -463,14 +463,14 @@
             },
             {
                 "to": {
-                    "startLine": 427,
+                    "startLine": 423,
                     "startColumn": 4,
-                    "startOffset": 14007,
+                    "startOffset": 13966,
                     "endColumn": 42,
-                    "endOffset": 14045
+                    "endOffset": 14004
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/ids.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/ids.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 2,
@@ -482,14 +482,14 @@
             },
             {
                 "to": {
-                    "startLine": 428,
+                    "startLine": 424,
                     "startColumn": 4,
-                    "startOffset": 14050,
+                    "startOffset": 14009,
                     "endColumn": 45,
-                    "endOffset": 14091
+                    "endOffset": 14050
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/ids.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/ids.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 2,
@@ -501,14 +501,14 @@
             },
             {
                 "to": {
-                    "startLine": 429,
+                    "startLine": 425,
                     "startColumn": 4,
-                    "startOffset": 14096,
+                    "startOffset": 14055,
                     "endColumn": 50,
-                    "endOffset": 14142
+                    "endOffset": 14101
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/ids.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/ids.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 2,
@@ -520,14 +520,14 @@
             },
             {
                 "to": {
-                    "startLine": 430,
+                    "startLine": 426,
                     "startColumn": 4,
-                    "startOffset": 14147,
+                    "startOffset": 14106,
                     "endColumn": 57,
-                    "endOffset": 14200
+                    "endOffset": 14159
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/ids.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/ids.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 2,
@@ -539,14 +539,14 @@
             },
             {
                 "to": {
-                    "startLine": 431,
+                    "startLine": 427,
                     "startColumn": 4,
-                    "startOffset": 14205,
+                    "startOffset": 14164,
                     "endColumn": 60,
-                    "endOffset": 14261
+                    "endOffset": 14220
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/ids.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/ids.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 2,
@@ -558,14 +558,14 @@
             },
             {
                 "to": {
-                    "startLine": 432,
+                    "startLine": 428,
                     "startColumn": 4,
-                    "startOffset": 14266,
+                    "startOffset": 14225,
                     "endColumn": 39,
-                    "endOffset": 14301
+                    "endOffset": 14260
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/ids.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/ids.xml",
                     "position": {
                         "startLine": 25,
                         "startColumn": 2,
@@ -577,14 +577,14 @@
             },
             {
                 "to": {
-                    "startLine": 433,
+                    "startLine": 429,
                     "startColumn": 4,
-                    "startOffset": 14306,
+                    "startOffset": 14265,
                     "endColumn": 46,
-                    "endOffset": 14348
+                    "endOffset": 14307
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/ids.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/ids.xml",
                     "position": {
                         "startLine": 26,
                         "startColumn": 2,
@@ -596,14 +596,14 @@
             },
             {
                 "to": {
-                    "startLine": 434,
+                    "startLine": 430,
                     "startColumn": 4,
-                    "startOffset": 14353,
+                    "startOffset": 14312,
                     "endColumn": 49,
-                    "endOffset": 14398
+                    "endOffset": 14357
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/ids.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/ids.xml",
                     "position": {
                         "startLine": 27,
                         "startColumn": 2,
@@ -615,14 +615,14 @@
             },
             {
                 "to": {
-                    "startLine": 435,
+                    "startLine": 431,
                     "startColumn": 4,
-                    "startOffset": 14403,
+                    "startOffset": 14362,
                     "endColumn": 33,
-                    "endOffset": 14432
+                    "endOffset": 14391
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/ids.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/ids.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 2,
@@ -634,14 +634,14 @@
             },
             {
                 "to": {
-                    "startLine": 436,
+                    "startLine": 432,
                     "startColumn": 4,
-                    "startOffset": 14437,
+                    "startOffset": 14396,
                     "endColumn": 44,
-                    "endOffset": 14477
+                    "endOffset": 14436
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/ids.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/ids.xml",
                     "position": {
                         "startLine": 30,
                         "startColumn": 2,
@@ -653,20 +653,20 @@
             },
             {
                 "to": {
-                    "startLine": 437,
+                    "startLine": 433,
                     "startColumn": 4,
-                    "startOffset": 14482,
-                    "endColumn": 45,
-                    "endOffset": 14523
+                    "startOffset": 14441,
+                    "endColumn": 50,
+                    "endOffset": 14487
                 },
                 "from": {
-                    "file": "/Users/skrk/Desktop/Repos/repos/OCFNR/OCRTest/src/main/res/values/strings.xml",
+                    "file": "/Users/skrk/Documents/ocfnr/OCRTest/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
                         "startOffset": 681,
-                        "endColumn": 45,
-                        "endOffset": 722
+                        "endColumn": 50,
+                        "endOffset": 727
                     }
                 }
             }

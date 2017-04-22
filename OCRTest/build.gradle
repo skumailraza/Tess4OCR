@@ -1,30 +1,31 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion '25.0.0'
+    compileSdkVersion 19
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "edu.sfsu.cs.orange.ocr"
         minSdkVersion 8
         targetSdkVersion 10
     }
-
+    sourceSets.main {
+        jni.srcDirs = [] //disable automatic ndk-build call
+    }
+    task ndkBuild(type: Exec, description: 'Compile JNI source via NDK') {
+        commandLine "/Users/skrk/Library/Android/sdk/ndk-bundle/ndk-build",
+                'NDK_PROJECT_PATH=build/intermediates/ndk',
+                'NDK_LIBS_OUT=src/main/jniLibs',
+                'APP_BUILD_SCRIPT=src/main/jni/Android.mk',
+                'NDK_APPLICATION_MK=src/main/jni/Application.mk'
+    }
+    tasks.withType(JavaCompile) {
+        compileTask -> compileTask.dependsOn ndkBuild
+    }
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles 'proguard.cfg'
-        }
-    }
-    sourceSets {
-        main {
-            jni.srcDirs = ['src/main/cpp', 'src/main/cpp/', '/usr/local/include/', 'src/main/jni', 'src/main/jniLibs/']
-        }
-    }
-
-    externalNativeBuild {
-        cmake {
-            path 'src/main/cpp/CMakeLists.txt'
         }
     }
 }
@@ -37,5 +38,4 @@ dependencies {
     compile files('libs/microsoft-translator-java-api-0.6-mod.jar')
     compile files('libs/pl2303driver.jar')
     compile project(path: ':openCVLibrary310')
-    compile project(':openCVLibrary310')
 }

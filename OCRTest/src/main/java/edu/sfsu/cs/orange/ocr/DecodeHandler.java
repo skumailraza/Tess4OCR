@@ -93,7 +93,6 @@ final class DecodeHandler extends Handler {
     
     // Launch OCR asynchronously, so we get the dialog box displayed immediately
     new OcrRecognizeAsyncTask(activity, baseApi, data, width, height).execute();
-
   }
 
   /**
@@ -147,7 +146,6 @@ final class DecodeHandler extends Handler {
 
     try {     
       baseApi.setImage(ReadFile.readBitmap(bitmap));
-
       textResult = baseApi.getUTF8Text();
       timeRequired = System.currentTimeMillis() - start;
 

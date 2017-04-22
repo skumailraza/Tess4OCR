@@ -418,11 +418,7 @@
     <color name="viewfinder_corners">#ffffffff</color>
     <color name="viewfinder_frame">#ffd6d6d6</color>
     <color name="viewfinder_mask">#60000000</color>
-    <declare-styleable name="CameraBridgeViewBase"><attr format="boolean" name="show_fps"/><attr format="integer" name="camera_id">
-          <enum name="any" value="-1"/>
-          <enum name="back" value="99"/>
-          <enum name="front" value="98"/>
-       </attr></declare-styleable>
+    <declare-styleable name="CameraBridgeViewBase"><attr format="boolean" name="show_fps"/><attr format="integer" name="camera_id"><enum name="any" value="-1"/><enum name="back" value="99"/><enum name="front" value="98"/></attr></declare-styleable>
     <declare-styleable name="ViewfinderView"/>
     <item name="decode" type="id"/>
     <item name="decode_failed" type="id"/>
@@ -435,5 +431,5 @@
     <item name="ocr_decode_succeeded" type="id"/>
     <item name="quit" type="id"/>
     <item name="restart_preview" type="id"/>
-    <string name="app_name">OCR Test</string>
+    <string name="app_name">SendSuite OCR</string>
 </resources>
