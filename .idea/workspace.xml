@@ -11,189 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="058d8566-dfb9-473f-850c-288186c02783" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_OCRTest_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_OCRTest_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_OCRTest_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_OCRTest_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/generated/source/r/debug/com/googlecode/tesseract/android/R.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/single/drawable-hdpi.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/single/drawable-ldpi.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/single/drawable-mdpi.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/single/drawable-xhdpi.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/single/drawable-xxhdpi.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/single/drawable-xxxhdpi.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/com/googlecode/tesseract/android/R.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/packageDebug/file-input-save-data.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/pre-dexed/debug/classes_69c54b1a735a0a6f527c773e670b6329d62b887e.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/_ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/shutter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/shutter_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/shutter_bg_pressed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-hdpi/shutter_pressed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-ldpi/_ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-ldpi/background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-ldpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-mdpi/_ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-mdpi/background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-mdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-mdpi/shutter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-mdpi/shutter_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-mdpi/shutter_bg_pressed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-mdpi/shutter_pressed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-xhdpi/background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-xhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-xxhdpi/_appicon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-xxhdpi/background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-xxxhdpi/background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/src/main/cpp/address-reader.cc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/src/main/cpp/address-reader.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/src/main/cpp/bg-estimate.cc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/src/main/cpp/bg-estimate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/src/main/cpp/image-histogram.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/src/main/cpp/main-address-reader.cc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/src/main/cpp/opencv-tess-utils.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/src/main/cpp/union-find.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/AddressParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/Reader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/proguard-files/proguard-android-optimize.txt-2.3.0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/proguard-files/proguard-android.txt-2.3.0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/packageDebugResources/merged.dir/values/values.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/manifests/aapt/debug/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sampleimage.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/assets/debug/images/_launcher_icon.png" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/assets/debug/images/_launcher_icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/assets/debug/images/launcher_icon.png" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/assets/debug/images/launcher_icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/BeepManager$1.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/BeepManager$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/BeepManager.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/BeepManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/BuildConfig.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/BuildConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/CaptureActivity$1.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/CaptureActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/CaptureActivity.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/CaptureActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/CaptureActivityHandler$State.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/CaptureActivityHandler$State.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/CaptureActivityHandler.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/CaptureActivityHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/DecodeHandler.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/DecodeHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/DecodeThread.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/DecodeThread.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/FinishListener.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/FinishListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/HelpActivity$1.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/HelpActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/HelpActivity$HelpClient$1.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/HelpActivity$HelpClient$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/HelpActivity$HelpClient.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/HelpActivity$HelpClient.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/HelpActivity.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/HelpActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/KBWedge.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/KBWedge.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/LuminanceSource.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/LuminanceSource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/OcrCharacterHelper.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/OcrCharacterHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/OcrInitAsyncTask.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/OcrInitAsyncTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/OcrRecognizeAsyncTask.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/OcrRecognizeAsyncTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/OcrResult.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/OcrResult.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/OcrResultFailure.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/OcrResultFailure.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/OcrResultText.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/OcrResultText.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/PlanarYUVLuminanceSource.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/PlanarYUVLuminanceSource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/PreferencesActivity.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/PreferencesActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$array.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$array.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$attr.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$attr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$color.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$color.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$drawable.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$drawable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$id.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$layout.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$raw.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$raw.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$string.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$styleable.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$styleable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$xml.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R$xml.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/ViewfinderView.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/ViewfinderView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/AutoFocusManager$1.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/AutoFocusManager$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/AutoFocusManager$2.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/AutoFocusManager$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/AutoFocusManager.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/AutoFocusManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/CameraConfigurationManager$1.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/CameraConfigurationManager$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/CameraConfigurationManager.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/CameraConfigurationManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/CameraManager.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/CameraManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/PreviewCallback.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/PreviewCallback.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/ShutterButton$1.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/ShutterButton$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/ShutterButton$OnShutterButtonListener.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/ShutterButton$OnShutterButtonListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/ShutterButton.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/camera/ShutterButton.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/language/LanguageCodeHelper.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/language/LanguageCodeHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/language/TranslateAsyncTask.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/language/TranslateAsyncTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/language/Translator.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/language/Translator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/language/TranslatorBing.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/language/TranslatorBing.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/language/TranslatorGoogle.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/language/TranslatorGoogle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable/ic_launcher.png" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/drawable/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/res/resources-debug-androidTest.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/res/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/outputs/apk/OCRTest-debug.apk" afterPath="$PROJECT_DIR$/OCRTest/build/outputs/apk/OCRTest-debug.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/compileDebugAidl/dependency.store" afterPath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/compileDebugAidl/dependency.store" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/compileDebugAndroidTestAidl/dependency.store" afterPath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/compileDebugAndroidTestAidl/dependency.store" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/res/resources-debug-androidTest.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/outputs/aar/openCVLibrary310-debug.aar" afterPath="$PROJECT_DIR$/openCVLibrary310/build/outputs/aar/openCVLibrary310-debug.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/tess_two_5_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/tess_two_5_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/LeptonicaAPI.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OCRTest/src/main/jni/Android.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OCRTest/src/main/jni/Application.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_OpencvNativeClass.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_OpencvNativeClass.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gradle.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCFNR.iml" afterPath="$PROJECT_DIR$/OCFNR.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/OCRTest.iml" afterPath="$PROJECT_DIR$/OCRTest/OCRTest.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build.gradle" afterPath="$PROJECT_DIR$/OCRTest/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/generated/source/r/debug/edu/sfsu/cs/orange/ocr/R.java" afterPath="$PROJECT_DIR$/OCRTest/build/generated/source/r/debug/edu/sfsu/cs/orange/ocr/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/assets/debug/html/about.html" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/assets/debug/html/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/assets/debug/html/changes.html" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/assets/debug/html/changes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/assets/debug/html/style.css" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/assets/debug/html/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/assets/debug/html/whatsnew.html" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/assets/debug/html/whatsnew.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/multi/values.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/single/drawable.json" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/single/drawable.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/single/layout.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/single/raw.json" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/single/raw.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/single/xml.json" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/blame/res/debug/single/xml.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/mergeDebugAssets/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/mergeDebugResources/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/incremental/mergeDebugShaders/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/res/merged/debug/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/symbols/debug/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/OCRTest/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/OCRTest/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/src/main/assets/html/changes.html" afterPath="$PROJECT_DIR$/OCRTest/src/main/assets/html/changes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/src/main/assets/html/whatsnew.html" afterPath="$PROJECT_DIR$/OCRTest/src/main/assets/html/whatsnew.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivity.java" afterPath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/DecodeHandler.java" afterPath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/DecodeHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OcrRecognizeAsyncTask.java" afterPath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OcrRecognizeAsyncTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OpencvNativeClass.java" afterPath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OpencvNativeClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/OCRTest/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build.gradle" afterPath="$PROJECT_DIR$/openCVLibrary310/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/generated/source/aidl/debug/org/opencv/engine/OpenCVEngineInterface.java" afterPath="$PROJECT_DIR$/openCVLibrary310/build/generated/source/aidl/debug/org/opencv/engine/OpenCVEngineInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/generated/source/r/androidTest/debug/org/opencv/R.java" afterPath="$PROJECT_DIR$/openCVLibrary310/build/generated/source/r/androidTest/debug/org/opencv/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/generated/source/r/debug/org/opencv/R.java" afterPath="$PROJECT_DIR$/openCVLibrary310/build/generated/source/r/debug/org/opencv/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/blame/res/androidTest/debug/multi/values.json" afterPath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/blame/res/androidTest/debug/multi/values.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/bundles/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/bundles/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/bundles/debug/R.txt" afterPath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/bundles/debug/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/bundles/debug/res/values/values.xml" afterPath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/bundles/debug/res/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" afterPath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/mergeDebugAssets/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterPath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/mergeDebugShaders/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/packageDebugResources/merger.xml" afterPath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/incremental/packageDebugResources/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/res/merged/androidTest/debug/values/values.xml" afterPath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/res/merged/androidTest/debug/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/symbols/androidTest/debug/R.txt" afterPath="$PROJECT_DIR$/openCVLibrary310/build/intermediates/symbols/androidTest/debug/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary310/openCVLibrary310.iml" afterPath="$PROJECT_DIR$/openCVLibrary310/openCVLibrary310.iml" />
     </list>
     <ignored path="ocfnr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -265,7 +89,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.mk" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Application.mk" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/Application.mk">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="36">
@@ -317,7 +141,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeptonicaAPI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LeptonicaAPI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/LeptonicaAPI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
@@ -3511,7 +3335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492881040824</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Skew Correction Implemented in Java">
+      <created>1492881883668</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1492881883668</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3533,14 +3364,14 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4880546" sideWeight="0.5151286" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31637716" sideWeight="0.4914163" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31637716" sideWeight="0.4914163" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31637716" sideWeight="0.50858366" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25965664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25965664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -3878,30 +3709,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/LeptonicaAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1492862459000" expanded="true" signature="385:1258" ph="{...}" />
-            <marker date="1492862459000" expanded="true" signature="803:959" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_OpencvNativeClass.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_OpencvNativeClass.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -3929,6 +3740,26 @@
         <state relative-caret-position="36">
           <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_OpencvNativeClass.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/LeptonicaAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1492862459000" expanded="true" signature="385:1258" ph="{...}" />
+            <marker date="1492862459000" expanded="true" signature="803:959" ph="//..." />
+          </folding>
         </state>
       </provider>
     </entry>
