@@ -19,3 +19,13 @@ LOCAL_PATH := $(call my-dir)
 
 	include $(BUILD_SHARED_LIBRARY)
 
+    include $(CLEAR_VARS)
+
+	LOCAL_SRC_FILES := edu_sfsu_cs_orange_ocr_ParsingNativeClass.cpp
+	LOCAL_LDLIBS += -llog
+    LOCAL_MODULE := MyParsingLibs
+
+
+    include $(BUILD_SHARED_LIBRARY)
+
+

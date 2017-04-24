@@ -11,13 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="058d8566-dfb9-473f-850c-288186c02783" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/LeptonicaAPI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OCRTest/src/main/jni/Android.mk" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OCRTest/src/main/jni/Application.mk" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_OpencvNativeClass.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_OpencvNativeClass.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gradle.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/ParsingNativeClass.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_ParsingNativeClass.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_ParsingNativeClass.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/CaptureActivity$1.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/CaptureActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/CaptureActivity.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/CaptureActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/OcrRecognizeAsyncTask.class" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/classes/debug/edu/sfsu/cs/orange/ocr/OcrRecognizeAsyncTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/OCRTest/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/OCRTest.iml" afterPath="$PROJECT_DIR$/OCRTest/OCRTest.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivity.java" afterPath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OcrRecognizeAsyncTask.java" afterPath="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OcrRecognizeAsyncTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/src/main/jni/Android.mk" afterPath="$PROJECT_DIR$/OCRTest/src/main/jni/Android.mk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OCRTest/src/main/jni/Application.mk" afterPath="$PROJECT_DIR$/OCRTest/src/main/jni/Application.mk" />
     </list>
     <ignored path="ocfnr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,32 +55,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="edu_sfsu_cs_orange_ocr_OpencvNativeClass.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_OpencvNativeClass.cpp">
+      <file leaf-file-name="OcrRecognizeAsyncTask.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OcrRecognizeAsyncTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edu_sfsu_cs_orange_ocr_OpencvNativeClass.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_OpencvNativeClass.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build-binary.mk" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Library/Android/sdk/ndk-bundle/build/core/build-binary.mk">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="686" column="0" selection-start-line="686" selection-start-column="0" selection-end-line="686" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="2826">
+              <caret line="171" column="31" selection-start-line="171" selection-start-column="31" selection-end-line="171" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,8 +70,18 @@
       <file leaf-file-name="Android.mk" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/Android.mk">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+            <state relative-caret-position="486">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaptureActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2898">
+              <caret line="76" column="37" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -92,65 +90,72 @@
       <file leaf-file-name="Application.mk" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/Application.mk">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+            <state relative-caret-position="108">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup-app.mk" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Library/Android/sdk/ndk-bundle/build/core/setup-app.mk">
+      <file leaf-file-name="ParsingNativeClass.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/ParsingNativeClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OpencvNativeClass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OpencvNativeClass.java">
+      <file leaf-file-name="edu_sfsu_cs_orange_ocr_ParsingNativeClass.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_ParsingNativeClass.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="74" selection-start-line="9" selection-start-column="74" selection-end-line="9" selection-end-column="74" />
+            <state relative-caret-position="-54">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OcrRecognizeAsyncTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OcrRecognizeAsyncTask.java">
+      <file leaf-file-name="edu_sfsu_cs_orange_ocr_ParsingNativeClass.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_ParsingNativeClass.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="86" column="41" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Skew.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.rmtheis/tess-two/5.4.0/e7b95dcd9387a15adb1406c608bcadff930eebf7/tess-two-5.4.0-sources.jar!/com/googlecode/leptonica/android/Skew.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-144">
-              <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeptonicaAPI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LeptonicaAPI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/LeptonicaAPI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="162">
               <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <marker date="1492862459000" expanded="true" signature="385:1258" ph="{...}" />
                 <marker date="1492862459000" expanded="true" signature="803:959" ph="//..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OCRTest.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OCRTest/OCRTest.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaptureActivityHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivityHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="30" column="72" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2618,24 +2623,26 @@
         <option value="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/ContinuousTesting.java" />
         <option value="$PROJECT_DIR$/OCRTest/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/OCRTest/src/main/java/test.cpp" />
-        <option value="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/ParsingNativeClass.java" />
         <option value="$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_ParsingNativeClass.h" />
         <option value="$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_ParsingNativeClass.cpp" />
-        <option value="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivity.java" />
         <option value="$PROJECT_DIR$/OCRTest/build.gradle" />
         <option value="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/LeptonicaAPI.java" />
         <option value="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OpencvNativeClass.java" />
         <option value="$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_OpencvNativeClass.cpp" />
-        <option value="$PROJECT_DIR$/OCRTest/src/main/jni/Android.mk" />
         <option value="$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_OpencvNativeClass.h" />
-        <option value="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OcrRecognizeAsyncTask.java" />
+        <option value="$PROJECT_DIR$/OCRTest/OCRTest.iml" />
+        <option value="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivity.java" />
+        <option value="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/ParsingNativeClass.java" />
         <option value="$PROJECT_DIR$/OCRTest/src/main/jni/Application.mk" />
+        <option value="$PROJECT_DIR$/OCRTest/src/main/jni/Android.mk" />
+        <option value="$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OcrRecognizeAsyncTask.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="806" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -2759,6 +2766,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane />
+      </pane>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2923,14 +2938,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
-      <pane id="AndroidView">
-        <subPane />
-      </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2939,14 +2946,17 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="android.project.structure.last.selected" value="openCVLibrary310" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/ocfnr" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/ocfnr 2" />
     <property name="SearchEverywhereHistoryKey" value="CAPTURE&#9;PSI&#9;JAVA://edu.sfsu.cs.orange.ocr.CaptureActivity" />
     <property name="device.picker.selection" value="0123456789ABCDEF" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="2.1.2" />
-    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.sfsu.cs.orange.ocr" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/OCRTest/src/main/jni" />
       <recent name="F:\repos\ocfnr\OCRTest\src\main\jni" />
     </key>
   </component>
@@ -3342,7 +3352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492881883668</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Skew Correction Implemented in Java">
+      <created>1492881954610</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1492881954610</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3355,23 +3372,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="23" width="1440" height="806" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22456576" sideWeight="0.48354793" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19710144" sideWeight="0.46924177" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4880546" sideWeight="0.5151286" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31637716" sideWeight="0.4914163" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31637716" sideWeight="0.48855507" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31637716" sideWeight="0.50858366" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25965664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19710144" sideWeight="0.5307582" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25894135" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -3408,19 +3425,19 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivity.java</url>
-          <line>964</line>
+          <line>965</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivity.java</url>
-          <line>953</line>
+          <line>954</line>
           <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivity.java</url>
-          <line>954</line>
+          <line>955</line>
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
@@ -3430,28 +3447,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gradle.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OpencvNativeClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="52" column="25" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3487,9 +3487,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6783">
           <caret line="399" column="44" selection-start-line="399" selection-start-column="44" selection-end-line="399" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3509,9 +3507,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3524,7 +3520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3620,12 +3615,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/bits/c++0x_warning.h" />
-    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_ParsingNativeClass.cpp" />
     <entry file="file://$PROJECT_DIR$/openCVLibrary310/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3637,12 +3630,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/ParsingNativeClass.java" />
-    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_ParsingNativeClass.h" />
     <entry file="file://$PROJECT_DIR$/OCRTest/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4">
@@ -3655,17 +3645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13608">
-          <caret line="936" column="0" selection-start-line="936" selection-start-column="0" selection-end-line="936" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3673,7 +3652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3681,7 +3659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-144">
           <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3695,57 +3672,30 @@
     </entry>
     <entry file="file://$USER_HOME$/Library/Android/sdk/ndk-bundle/build/core/build-binary.mk">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
+        <state relative-caret-position="12348">
           <caret line="686" column="0" selection-start-line="686" selection-start-column="0" selection-end-line="686" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/Android.mk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_OpencvNativeClass.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="468">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OcrRecognizeAsyncTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="86" column="41" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Android/sdk/ndk-bundle/build/core/setup-app.mk">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
+        <state relative-caret-position="2142">
           <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/Application.mk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_OpencvNativeClass.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
+        <state relative-caret-position="360">
           <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
           <folding />
         </state>
@@ -3753,12 +3703,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/LeptonicaAPI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="162">
           <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
             <marker date="1492862459000" expanded="true" signature="385:1258" ph="{...}" />
             <marker date="1492862459000" expanded="true" signature="803:959" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OCRTest/OCRTest.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivityHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="30" column="72" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/Android.mk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_ParsingNativeClass.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/Application.mk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/jni/edu_sfsu_cs_orange_ocr_ParsingNativeClass.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-54">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/ParsingNativeClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/CaptureActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2898">
+          <caret line="76" column="37" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OCRTest/src/main/java/edu/sfsu/cs/orange/ocr/OcrRecognizeAsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2826">
+          <caret line="171" column="31" selection-start-line="171" selection-start-column="31" selection-end-line="171" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

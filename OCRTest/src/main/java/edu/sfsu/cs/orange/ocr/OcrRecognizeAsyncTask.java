@@ -150,7 +150,9 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
           textResult = textResult + temp[i];
       }
     }
-    ocrResult.setText(textResult);
+    String textResult2=ParsingNativeClass.ParseAddress(textResult);
+    Log.d("Return parsing",textResult2);
+    ocrResult.setText(textResult2);
     ocrResult.setRecognitionTimeRequired(timeRequired);
     return true;
   }

@@ -75,6 +75,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   }
 static {
   System.loadLibrary("MyOpencvLibs");
+  System.loadLibrary("MyParsingLibs");
 }
   private static final String TAG = CaptureActivity.class.getSimpleName();
 
