@@ -7,8 +7,8 @@ JNIEXPORT void JNICALL Java_edu_sfsu_cs_orange_ocr_OpencvNativeClass_BinarizeSha
     Mat &binary = *(Mat*) output;
     int w;
     double k;
-    w = 50;
-    k = 0.1;
+    w = 30;
+    k = 0.2;
     Mat sum, sumsq;
 
     int m_LargerDim = 2000;

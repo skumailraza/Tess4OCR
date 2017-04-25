@@ -90,21 +90,21 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
       Imgcodecs.imwrite("/storage/emulated/0/DCIM/binarized.jpg",image);
       Utils.matToBitmap(image,bitmap);
 
-      Pix fimage = ReadFile.readBitmap(bitmap);
-      fimage = Binarize.otsuAdaptiveThreshold(fimage);
+      //Pix fimage = ReadFile.readBitmap(bitmap);
+      //fimage = Binarize.otsuAdaptiveThreshold(fimage);
 
-      float angle = Skew.findSkew(fimage);
-      Log.i("Skew: ", Float.toString(angle));
-      double deg2rad = 3.14159265 / 180.;
+      //float angle = Skew.findSkew(fimage);
+      //Log.i("Skew: ", Float.toString(angle));
+      //double deg2rad = 3.14159265 / 180.;
 
-      fimage = Rotate.rotate(fimage, angle);
+      //fimage = Rotate.rotate(fimage, angle);
 
-      bitmap = WriteFile.writeBitmap(fimage);
+      //bitmap = WriteFile.writeBitmap(fimage);
 
       Mat skewed = new Mat();
 
-      Utils.bitmapToMat(bitmap,skewed);
-      Imgcodecs.imwrite("/storage/emulated/0/DCIM/deskewed.jpg", skewed);
+      //Utils.bitmapToMat(bitmap,skewed);
+      //Imgcodecs.imwrite("/storage/emulated/0/DCIM/deskewed.jpg", skewed);
 
       baseApi.setImage(ReadFile.readBitmap(bitmap));
 

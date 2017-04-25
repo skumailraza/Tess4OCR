@@ -148,12 +148,12 @@ final class DecodeHandler extends Handler {
     long start = System.currentTimeMillis();
 
     try {
-      Mat image = new Mat();
-      Utils.bitmapToMat(bitmap,image);
-      Mat gray = new Mat();
-      Utils.bitmapToMat(bitmap,gray);
-      OpencvNativeClass.BinarizeShafait(gray.getNativeObjAddr(),image.getNativeObjAddr());
-      Utils.matToBitmap(image,bitmap);
+      //Mat image = new Mat();
+      //Utils.bitmapToMat(bitmap,image);
+      //Mat gray = new Mat();
+      //Utils.bitmapToMat(bitmap,gray);
+      //OpencvNativeClass.BinarizeShafait(gray.getNativeObjAddr(),image.getNativeObjAddr());
+      //Utils.matToBitmap(image,bitmap);
       baseApi.setImage(ReadFile.readBitmap(bitmap));
       textResult = baseApi.getUTF8Text();
       timeRequired = System.currentTimeMillis() - start;
