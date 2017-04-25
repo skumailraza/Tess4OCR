@@ -66,12 +66,13 @@ output = output+"line="+lines[i]+"\n";
     if(matched>6){
         return 0;
     }
+    else if(matched>=5)matched-=1;
 
     //parse the cityStateZip line to assign City, State, Zip code
      std::string arr[4];
      string lala ="";
         int i = 0;
-        std::stringstream ssin(lines[matched-1]);
+        std::stringstream ssin(lines[matched]);
         while (ssin.good() && i < 4){
             ssin >> arr[i];
 
@@ -83,18 +84,24 @@ output = output+"line="+lines[i]+"\n";
         string parsedzip=arr[2];
 
    if(!(isNumber(parsedzip))){
-        parsedzip="";
+        parsedzip=" ";
         }
 
     //the lines between cityZipState line and Name line carry location
-    for (int i=1; i<matched-1; i++){
-        location=location+lines[i]+" ";
+    int loci;
+    for (loci=0; loci<matched; loci++){
+        location=location+lines[loci]+"\n";
+    }
+    if(loci<3){
+        for(int i=loci;i<=3;i++){
+            location=location+"\n";
+        }
     }
     //assign location feild
     string parsedlocation=location;
     string parsedcountry="";
     //check if there is a line after cityStateZip line
-    if(lines.size()-1>matched-1 && lines[lines.size()-1].length()<=10){
+    if(lines.size()-1>matched && lines[lines.size()-1].length()<=10){
             parsedcountry = lines[lines.size() - 1];
         }
     else{

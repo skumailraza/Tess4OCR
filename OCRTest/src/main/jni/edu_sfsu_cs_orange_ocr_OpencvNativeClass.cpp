@@ -10,7 +10,18 @@ JNIEXPORT void JNICALL Java_edu_sfsu_cs_orange_ocr_OpencvNativeClass_BinarizeSha
     w = 50;
     k = 0.1;
     Mat sum, sumsq;
+
+    int m_LargerDim = 2000;
+
+    int maxDim = max(gray.cols, gray.rows);
+    Mat rescaledImg;
+    int orows = gray.rows;
+    int ocols = gray.cols;
+    double scale = m_LargerDim / maxDim;
+    resize(gray, gray, Size(), scale, scale, INTER_LANCZOS4);
+
     cvtColor(gray, gray, COLOR_BGR2GRAY);
+
     //gray.convertTo(gray, CV_64F);
     gray.copyTo(binary);
     int half_width = w >> 1;
@@ -26,12 +37,40 @@ JNIEXPORT void JNICALL Java_edu_sfsu_cs_orange_ocr_OpencvNativeClass_BinarizeSha
                 double sq_mean = (sumsq.at<double>(x_0,y_0) + sumsq.at<double>(x_1,y_1) - sumsq.at<double>(x_0,y_1) - sumsq.at<double>(x_1,y_0)) / area;
                 double stdev = sqrt(sq_mean - (mean * mean));
                 double threshold = mean * (1 + k * ((stdev / 128) -1) );
+                //double thres = threshold(gray, binary, 0, 255, THRESH_BINARY | THRESH_OTSU);
                 if (gray.at<uchar>(i,j) > threshold)
-                binary.at<uchar>(i,j) = 255;
+                    binary.at<uchar>(i,j) = 255;
                 else
-                binary.at<uchar>(i,j) = 0;
+                    binary.at<uchar>(i,j) = 0;
             }
         }
+//    int erosion_elem = 0;
+//    int erosion_size = 0;
+//    int dilation_elem = 0;
+//    int dilation_size = 0;
+//    int const max_kernel_size = 3;
+//    int erosion_type = MORPH_ELLIPSE;
+//    int dilation_type = MORPH_ELLIPSE;
+//    Mat element = getStructuringElement( erosion_type,
+//                                         Size( 2*erosion_size + 1, 2*erosion_size+1 ),
+//                                         Point( erosion_size, erosion_size ) );
+//
+//    erode( binary, binary, element );
+//
+//    element = getStructuringElement( dilation_type,
+//                                 Size( 2*dilation_size + 1, 2*dilation_size+1 ),
+//                                 Point( dilation_size, dilation_size ) );
+//    dilate( binary,binary, element );
+//    int  morph_operator = 0;
+//    int operation = morph_operator + 2;
+//    int morph_size = 3; //kernal size
+//    int morph_elem = 0;
+//    Mat element = getStructuringElement( morph_elem, Size( 2*morph_size + 1, 2*morph_size+1 ), Point( morph_size, morph_size ) );
+//
+//    /// Apply the specified morphology operation
+//    morphologyEx( binary, binary, operation, element );
+    double iop = 0;
+    resize(binary, binary,  cv::Size(ocols,orows), iop, iop, INTER_LANCZOS4);
 }
 
 
@@ -370,3 +409,4 @@ bg.bgEstimatePercentile(gray, grayBG);
 bg.binarizeByBackgroundOtsu(gray, grayBG, binary);
 
 }
+

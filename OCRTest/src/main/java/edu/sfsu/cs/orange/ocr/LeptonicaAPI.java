@@ -15,6 +15,7 @@ import static org.opencv.core.CvType.CV_8UC1;
 
 public class LeptonicaAPI {
 
+
 //    Pix MAT2PIXBinary(Mat imgMAT){
 //        assert(imgMAT.depth() == CV_8UC1);
 //        Pix imgPIX;

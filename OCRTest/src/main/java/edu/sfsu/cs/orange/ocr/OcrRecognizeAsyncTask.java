@@ -19,6 +19,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import android.graphics.Bitmap;
+import android.graphics.ImageFormat;
 import android.graphics.Rect;
 import android.os.AsyncTask;
 import android.os.Environment;
@@ -67,6 +68,7 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
   protected Boolean doInBackground(Void... arg0) {
     long start = System.currentTimeMillis();
     Bitmap bitmap = activity.getCameraManager().buildLuminanceSource(data, width, height).renderCroppedGreyscaleBitmap();
+
     String textResult;
     Mat image = new Mat();
     Utils.bitmapToMat(bitmap,image);
@@ -81,19 +83,32 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
     //image.convertTo( gray,CvType.CV_8UC1);
     //image.convertTo(image,CvType.CV_64F);
     try {
-
+      Imgcodecs.imwrite("/storage/emulated/0/DCIM/orig.jpg",image);
       OpencvNativeClass.BinarizeShafait(gray.getNativeObjAddr(),image.getNativeObjAddr());
 
-      Imgcodecs.imwrite("/storage/emulated/0/DCIM/btest.jpg",image);
+
+      Imgcodecs.imwrite("/storage/emulated/0/DCIM/binarized.jpg",image);
       Utils.matToBitmap(image,bitmap);
 
       Pix fimage = ReadFile.readBitmap(bitmap);
+      fimage = Binarize.otsuAdaptiveThreshold(fimage);
+
       float angle = Skew.findSkew(fimage);
-      Rotate.rotate(fimage, angle);
+      Log.i("Skew: ", Float.toString(angle));
+      double deg2rad = 3.14159265 / 180.;
+
+      fimage = Rotate.rotate(fimage, angle);
 
       bitmap = WriteFile.writeBitmap(fimage);
 
+      Mat skewed = new Mat();
+
+      Utils.bitmapToMat(bitmap,skewed);
+      Imgcodecs.imwrite("/storage/emulated/0/DCIM/deskewed.jpg", skewed);
+
       baseApi.setImage(ReadFile.readBitmap(bitmap));
+
+
       textResult = baseApi.getUTF8Text();
       timeRequired = System.currentTimeMillis() - start;
 
@@ -152,6 +167,7 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
     }
     String textResult2=ParsingNativeClass.ParseAddress(textResult);
     Log.d("Return parsing",textResult2);
+    ocrResult.setViewtext(textResult);
     ocrResult.setText(textResult2);
     ocrResult.setRecognitionTimeRequired(timeRequired);
     return true;

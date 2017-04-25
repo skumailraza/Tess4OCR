@@ -441,7 +441,8 @@ static {
     }
     if (baseApi != null) {
       baseApi.setPageSegMode(pageSegmentationMode);
-      baseApi.setVariable(TessBaseAPI.VAR_CHAR_BLACKLIST, characterBlacklist);
+      //baseApi.setVariable(TessBaseAPI.VAR_CHAR_BLACKLIST, characterBlacklist);
+      baseApi.setVariable(TessBaseAPI.VAR_CHAR_BLACKLIST, "_.,/~`\"\'?!;+*%$");
       baseApi.setVariable(TessBaseAPI.VAR_CHAR_WHITELIST, characterWhitelist);
     }
 
@@ -829,7 +830,8 @@ static {
     TextView sourceLanguageTextView = (TextView) findViewById(R.id.source_language_text_view);
     sourceLanguageTextView.setText(sourceLanguageReadable);
     TextView ocrResultTextView = (TextView) findViewById(R.id.ocr_result_text_view);
-    ocrResultTextView.setText(ocrResult.getText());
+    //changing for text view
+    ocrResultTextView.setText(ocrResult.getViewtext());
     // Crudely scale betweeen 22 and 32 -- bigger font for shorter text
     int scaledSize = Math.max(22, 32 - ocrResult.getText()
             .length() / 4);
@@ -895,10 +897,11 @@ static {
         String Result = "";
         
         String[] lines = ocrResult.getText().split("\n");
+        for(int i=0;i<lines.length;i++)Log.d("output:",lines[i]);
         String name = lines[0];
         String cityStateZip = lines[lines.length - 1];
         int addressLinesIndex=1;
-        if(lines.length==6){
+        if(lines.length==9){
           mKbWedge.Write(name);
           mKbWedge.Write("\t");
           mKbWedge.Write(lines[1]);
@@ -915,15 +918,18 @@ static {
         Result += "<TAB>";
         // write at most 3 address lines
         int addressLineCount = 0;
-        for (int i = addressLinesIndex; i < lines.length - 1 && addressLineCount < 3; ++i) {
+        for (int i = addressLinesIndex; i < lines.length && addressLineCount < 8; ++i) {
+           Log.d("indexes:",Integer.toString(i));
+          Log.d("adl:",Integer.toString(addressLineCount));
 
           mKbWedge.Write(lines[i]);
           mKbWedge.Write("\t");
           Result += lines[i] +"<TAB>";
           addressLineCount++;
+          Log.d("kbwedge",lines[i]);
         }
         // if less than 3 address lines were written, write tabs for the missed
-        for (int i = addressLineCount; i < 3; ++i) {
+        for (int i = addressLineCount; i < 8; ++i) {
           //writeText(outputStream, "\t");
           mKbWedge.Write("\t");
           Result += "<TAB>";
