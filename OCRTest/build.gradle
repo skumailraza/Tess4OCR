@@ -1,19 +1,19 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
 
     defaultConfig {
         applicationId "edu.sfsu.cs.orange.ocr"
         minSdkVersion 8
-        targetSdkVersion 10
+        targetSdkVersion 25
     }
     sourceSets.main {
         jni.srcDirs = [] //disable automatic ndk-build call
     }
     task ndkBuild(type: Exec, description: 'Compile JNI source via NDK') {
-        commandLine "/Users/skrk/Library/Android/sdk/ndk-bundle/ndk-build",
+        commandLine "/Users/khurram/Library/Android/sdk/ndk-bundle/ndk-build",
                 'NDK_PROJECT_PATH=build/intermediates/ndk',
                 'NDK_LIBS_OUT=src/main/jniLibs',
                 'APP_BUILD_SCRIPT=src/main/jni/Android.mk',
