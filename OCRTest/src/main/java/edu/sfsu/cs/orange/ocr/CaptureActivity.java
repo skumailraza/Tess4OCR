@@ -1,5 +1,6 @@
 package edu.sfsu.cs.orange.ocr;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -19,6 +20,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.text.ClipboardManager;
 import android.text.SpannableStringBuilder;
 import android.text.style.CharacterStyle;
@@ -52,6 +55,7 @@ import java.util.regex.Pattern;
 
 import edu.sfsu.cs.orange.ocr.camera.CameraManager;
 import edu.sfsu.cs.orange.ocr.camera.ShutterButton;
+import edu.sfsu.cs.orange.ocr.dialog.MessageDialogFragment;
 import edu.sfsu.cs.orange.ocr.language.LanguageCodeHelper;
 import edu.sfsu.cs.orange.ocr.language.TranslateAsyncTask;
 /**
@@ -65,7 +69,10 @@ import edu.sfsu.cs.orange.ocr.language.TranslateAsyncTask;
 
 public final class CaptureActivity extends Activity implements SurfaceHolder.Callback, ShutterButton.OnShutterButtonListener {
 
-  //added to init opencv//
+private static final int CAMERA_PERMISSION_REQUEST_CODE = 100;
+private static final int WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 110;
+
+//added to init opencv//
   static {
     if(!OpenCVLoader.initDebug()) {
       Log.d("ERROR", "Unable to load OpenCV");
@@ -388,38 +395,7 @@ static {
   @Override
   protected void onResume() {
     super.onResume();
-    resetStatusView();
-
-    String previousSourceLanguageCodeOcr = sourceLanguageCodeOcr;
-    int previousOcrEngineMode = ocrEngineMode;
-
-    retrievePreferences();
-
-    //if(mKbWedge != null)
-    //  mKbWedge.onResume(); // must call this
-
-    // Set up the camera preview surface.
-    surfaceView = (SurfaceView) findViewById(R.id.preview_view);
-    surfaceHolder = surfaceView.getHolder();
-    if (!hasSurface) {
-      surfaceHolder.addCallback(this);
-      surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
-    }
-
-
-    // Do OCR engine initialization, if necessary
-    boolean doNewInit = (baseApi == null) || !sourceLanguageCodeOcr.equals(previousSourceLanguageCodeOcr) ||
-            ocrEngineMode != previousOcrEngineMode;
-    if (doNewInit) {
-      // Initialize the OCR engine
-      File storageDirectory = getStorageDirectory();
-      if (storageDirectory != null) {
-        initOcrEngine(storageDirectory, sourceLanguageCodeOcr, sourceLanguageReadable);
-      }
-    } else {
-      // We already have the engine initialized, so just start the camera.
-      resumeOCR();
-    }
+      checkPermissions();
   }
 
   /**
@@ -1475,5 +1451,104 @@ static {
             .setPositiveButton("Done", new FinishListener(this))
             .show();
   }
+@Override
+public void onRequestPermissionsResult(int requestCode,  String permissions[], int[] grantResults) {
+    checkPermissions();
+}
+private void init() {
+
+    resetStatusView();
+
+    String previousSourceLanguageCodeOcr = sourceLanguageCodeOcr;
+    int previousOcrEngineMode = ocrEngineMode;
+
+    retrievePreferences();
+
+    //if(mKbWedge != null)
+    //  mKbWedge.onResume(); // must call this
+
+    // Set up the camera preview surface.
+    surfaceView = (SurfaceView) findViewById(R.id.preview_view);
+    surfaceHolder = surfaceView.getHolder();
+    if (!hasSurface) {
+        surfaceHolder.addCallback(this);
+        surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+    }
+
+
+    // Do OCR engine initialization, if necessary
+    boolean doNewInit = (baseApi == null) || !sourceLanguageCodeOcr.equals(previousSourceLanguageCodeOcr) ||
+            ocrEngineMode != previousOcrEngineMode;
+    if (doNewInit) {
+        // Initialize the OCR engine
+        File storageDirectory = getStorageDirectory();
+        if (storageDirectory != null) {
+            initOcrEngine(storageDirectory, sourceLanguageCodeOcr, sourceLanguageReadable);
+        }
+    } else {
+        // We already have the engine initialized, so just start the camera.
+        resumeOCR();
+    }
+}
+private void checkPermissions() {
+
+    if (!isCameraPermissionGranted()) {
+        requestForPermission(Manifest.permission.CAMERA);
+        return;
+    }
+    if (!isWriteToExternalStoragePermissionGranted()) {
+        requestForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        return;
+    }
+    init();
+}
+boolean isCameraPermissionGranted() {
+    return ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
+}
+boolean isWriteToExternalStoragePermissionGranted() {
+    return ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+}
+void requestForPermission(final String permission) {
+    if (ActivityCompat.shouldShowRequestPermissionRationale(this, permission)) {
+        MessageDialogFragment messageDialogFragment = new MessageDialogFragment();
+        messageDialogFragment.setTitle(getString(R.string.permission_request));
+        int message = R.string.app_name;
+        switch (permission) {
+            case Manifest.permission.CAMERA: {
+                message = R.string.camer_permission_message;
+                break;
+            }
+            case Manifest.permission.WRITE_EXTERNAL_STORAGE: {
+                message = R.string.write_external_storage_permission_message;
+                break;
+            }
+        }
+        messageDialogFragment.setMessage(getString(message));
+        messageDialogFragment.setPositiveButtonTitle(getString(R.string.allow));
+        messageDialogFragment.setNegativeButtonTitle(getString(R.string.deny));
+        messageDialogFragment.setListener(new MessageDialogFragment.Listener() {
+            @Override
+            public void onPositiveButtonTapped(MessageDialogFragment messageDialogFragment) {
+                requestForPermission(permission);
+            }
+            @Override
+            public void onNegativeButtonTapped(MessageDialogFragment messageDialogFragment) {}
+        });
+    }
+    else {
+        int requestCode = 0;
+        switch (permission) {
+            case Manifest.permission.CAMERA: {
+                requestCode = CAMERA_PERMISSION_REQUEST_CODE;
+                break;
+            }
+            case Manifest.permission.WRITE_EXTERNAL_STORAGE: {
+                requestCode = WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE;
+                break;
+            }
+        }
+        ActivityCompat.requestPermissions(this, new String[]{permission}, requestCode);
+    }
+}
 }
 
