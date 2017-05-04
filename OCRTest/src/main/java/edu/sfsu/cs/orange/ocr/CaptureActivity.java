@@ -301,7 +301,7 @@ static {
     translationView = (TextView) findViewById(R.id.translation_text_view);
     registerForContextMenu(translationView);
 
-    progressView = (View) findViewById(R.id.indeterminate_progress_indicator_view);
+    progressView = findViewById(R.id.indeterminate_progress_indicator_view);
 
     cameraManager = new CameraManager(getApplication());
     viewfinderView.setCameraManager(cameraManager);
@@ -518,11 +518,11 @@ static {
       handler = new CaptureActivityHandler(this, cameraManager, isContinuousModeActive);
 
     } catch (IOException ioe) {
-      showErrorMessage("Error", "Could not initialize camera. Please try restarting device.");
+      showErrorMessage("Could not initialize camera. Please try restarting device.");
     } catch (RuntimeException e) {
       // Barcode Scanner has seen crashes in the wild of this variety:
       // java.?lang.?RuntimeException: Fail to connect to camera service
-      showErrorMessage("Error", "Could not initialize camera. Please try restarting device.");
+      showErrorMessage("Could not initialize camera. Please try restarting device.");
     }
   }
 
@@ -667,7 +667,7 @@ static {
       state = Environment.getExternalStorageState();
     } catch (RuntimeException e) {
       Log.e(TAG, "Is the SD card visible?", e);
-      showErrorMessage("Error", "Required external storage (such as an SD card) is unavailable.");
+      showErrorMessage("Required external storage (such as an SD card) is unavailable.");
     }
 
     if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
@@ -681,7 +681,7 @@ static {
       } catch (NullPointerException e) {
         // We get an error here if the SD card is visible, but full
         Log.e(TAG, "External storage is unavailable");
-        showErrorMessage("Error", "Required external storage (such as an SD card) is full or unavailable.");
+        showErrorMessage("Required external storage (such as an SD card) is full or unavailable.");
       }
 
       //        } else {
@@ -695,13 +695,13 @@ static {
     } else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
       // We can only read the media
       Log.e(TAG, "External storage is read-only");
-      showErrorMessage("Error",
+      showErrorMessage(
               "Required external storage (such as an SD card) is unavailable for data storage.");
     } else {
       // Something else is wrong. It may be one of many other states, but all we need
       // to know is we can neither read nor write
       Log.e(TAG, "External storage is unavailable");
-      showErrorMessage("Error", "Required external storage (such as an SD card) is unavailable or corrupted.");
+      showErrorMessage("Required external storage (such as an SD card) is unavailable or corrupted.");
     }
     return null;
   }
@@ -737,7 +737,7 @@ static {
           SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
           prefs.edit()
                   .putString(PreferencesActivity.KEY_OCR_ENGINE_MODE, getOcrEngineModeName())
-                  .commit();
+                  .apply();
         }
       }
     }
@@ -755,7 +755,7 @@ static {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         prefs.edit()
                 .putString(PreferencesActivity.KEY_OCR_ENGINE_MODE, getOcrEngineModeName())
-                .commit();
+                .apply();
       }
     }
 
@@ -782,8 +782,7 @@ static {
       Log.d(TAG, "Disabling continuous preview");
       isContinuousModeActive = false;
       SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-      prefs.edit()
-              .putBoolean(PreferencesActivity.KEY_CONTINUOUS_PREVIEW, false);
+      prefs.edit().putBoolean(PreferencesActivity.KEY_CONTINUOUS_PREVIEW, false).apply();
     }
 
     // Start AsyncTask to install language data and init OCR
@@ -1067,7 +1066,7 @@ static {
       statusViewBottom.setTextSize(14);
       CharSequence cs = setSpanBetweenTokens(
               "OCR: " + sourceLanguageReadable + " - OCR failed - Time required: " + obj.getTimeRequired() + " ms",
-              "-", new ForegroundColorSpan(0xFFFF0000));
+              new ForegroundColorSpan(0xFFFF0000));
       statusViewBottom.setText(cs);
     }
   }
@@ -1084,13 +1083,13 @@ static {
    * ForegroundColorSpan(0xFFFF0000));} will return a CharSequence {@code
    * "Hello world!"} with {@code world} in red.
    */
-  private CharSequence setSpanBetweenTokens(CharSequence text, String token, CharacterStyle... cs) {
+  private CharSequence setSpanBetweenTokens(CharSequence text, CharacterStyle... cs) {
     // Start and end refer to the points where the span will apply
-    int tokenLen = token.length();
+    int tokenLen = "-".length();
     int start = text.toString()
-            .indexOf(token) + tokenLen;
+            .indexOf("-") + tokenLen;
     int end = text.toString()
-            .indexOf(token, start);
+            .indexOf("-", start);
 
     if (start > -1 && end > -1) {
       // Copy the spannable string to a mutable spannable string
@@ -1200,7 +1199,7 @@ static {
 
   @SuppressWarnings("unused")
   void setButtonVisibility(boolean visible) {
-    if (shutterButton != null && visible == true && DISPLAY_SHUTTER_BUTTON) {
+    if (shutterButton != null && visible && DISPLAY_SHUTTER_BUTTON) {
       shutterButton.setVisibility(View.VISIBLE);
     } else if (shutterButton != null) {
       shutterButton.setVisibility(View.GONE);
@@ -1265,17 +1264,13 @@ static {
       int currentVersion = info.versionCode;
       SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
       int lastVersion = prefs.getInt(PreferencesActivity.KEY_HELP_VERSION_SHOWN, 0);
-      if (lastVersion == 0) {
-        isFirstLaunch = true;
-      } else {
-        isFirstLaunch = false;
-      }
+        isFirstLaunch = lastVersion == 0;
       if (currentVersion > lastVersion) {
 
         // Record the last version for which we last displayed the What's New (Help) page
         prefs.edit()
                 .putInt(PreferencesActivity.KEY_HELP_VERSION_SHOWN, currentVersion)
-                .commit();
+                .apply();
         Intent intent = new Intent(this, HelpActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
 
@@ -1324,11 +1319,7 @@ static {
     isTranslationActive = prefs.getBoolean(PreferencesActivity.KEY_TOGGLE_TRANSLATION, false);
 
     // Retrieve from preferences, and set in this Activity, the capture mode preference
-    if (prefs.getBoolean(PreferencesActivity.KEY_CONTINUOUS_PREVIEW, CaptureActivity.DEFAULT_TOGGLE_CONTINUOUS)) {
-      isContinuousModeActive = true;
-    } else {
-      isContinuousModeActive = false;
-    }
+      isContinuousModeActive = prefs.getBoolean(PreferencesActivity.KEY_CONTINUOUS_PREVIEW, CaptureActivity.DEFAULT_TOGGLE_CONTINUOUS);
 
     // Retrieve from preferences, and set in this Activity, the page segmentation mode preference
     String[] pageSegmentationModes = getResources().getStringArray(R.array.pagesegmentationmodes);
@@ -1383,75 +1374,75 @@ static {
     // Continuous preview
     prefs.edit()
             .putBoolean(PreferencesActivity.KEY_CONTINUOUS_PREVIEW, CaptureActivity.DEFAULT_TOGGLE_CONTINUOUS)
-            .commit();
+            .apply();
 
     // Recognition language
     prefs.edit()
             .putString(PreferencesActivity.KEY_SOURCE_LANGUAGE_PREFERENCE, CaptureActivity.DEFAULT_SOURCE_LANGUAGE_CODE)
-            .commit();
+            .apply();
 
     // Translation
     prefs.edit()
             .putBoolean(PreferencesActivity.KEY_TOGGLE_TRANSLATION, CaptureActivity.DEFAULT_TOGGLE_TRANSLATION)
-            .commit();
+            .apply();
 
     // Translation target language
     prefs.edit()
             .putString(PreferencesActivity.KEY_TARGET_LANGUAGE_PREFERENCE, CaptureActivity.DEFAULT_TARGET_LANGUAGE_CODE)
-            .commit();
+            .apply();
 
     // Translator
     prefs.edit()
             .putString(PreferencesActivity.KEY_TRANSLATOR, CaptureActivity.DEFAULT_TRANSLATOR)
-            .commit();
+            .apply();
 
     // OCR Engine
     prefs.edit()
             .putString(PreferencesActivity.KEY_OCR_ENGINE_MODE, CaptureActivity.DEFAULT_OCR_ENGINE_MODE)
-            .commit();
+            .apply();
 
     // Autofocus
     prefs.edit()
             .putBoolean(PreferencesActivity.KEY_AUTO_FOCUS, CaptureActivity.DEFAULT_TOGGLE_AUTO_FOCUS)
-            .commit();
+            .apply();
 
     // Disable problematic focus modes
     prefs.edit()
             .putBoolean(PreferencesActivity.KEY_DISABLE_CONTINUOUS_FOCUS,
                     CaptureActivity.DEFAULT_DISABLE_CONTINUOUS_FOCUS)
-            .commit();
+            .apply();
 
     // Beep
     prefs.edit()
             .putBoolean(PreferencesActivity.KEY_PLAY_BEEP, CaptureActivity.DEFAULT_TOGGLE_BEEP)
-            .commit();
+            .apply();
 
     // Character blacklist
     prefs.edit()
             .putString(PreferencesActivity.KEY_CHARACTER_BLACKLIST,
                     OcrCharacterHelper.getDefaultBlacklist(CaptureActivity.DEFAULT_SOURCE_LANGUAGE_CODE))
-            .commit();
+            .apply();
 
     // Character whitelist
     prefs.edit()
             .putString(PreferencesActivity.KEY_CHARACTER_WHITELIST,
                     OcrCharacterHelper.getDefaultWhitelist(CaptureActivity.DEFAULT_SOURCE_LANGUAGE_CODE))
-            .commit();
+            .apply();
 
     // Page segmentation mode
     prefs.edit()
             .putString(PreferencesActivity.KEY_PAGE_SEGMENTATION_MODE, CaptureActivity.DEFAULT_PAGE_SEGMENTATION_MODE)
-            .commit();
+            .apply();
 
     // Reversed camera image
     prefs.edit()
             .putBoolean(PreferencesActivity.KEY_REVERSE_IMAGE, CaptureActivity.DEFAULT_TOGGLE_REVERSED_IMAGE)
-            .commit();
+            .apply();
 
     // Light
     prefs.edit()
             .putBoolean(PreferencesActivity.KEY_TOGGLE_LIGHT, CaptureActivity.DEFAULT_TOGGLE_LIGHT)
-            .commit();
+            .apply();
   }
 
   void displayProgressDialog() {
@@ -1475,11 +1466,10 @@ static {
   /**
    * Displays an error message dialog box to the user on the UI thread.
    *
-   * @param title   The title for the dialog box
    * @param message The error message to be displayed
    */
-  void showErrorMessage(String title, String message) {
-    new AlertDialog.Builder(this).setTitle(title)
+  void showErrorMessage(String message) {
+    new AlertDialog.Builder(this).setTitle("Error")
             .setMessage(message)
             .setOnCancelListener(new FinishListener(this))
             .setPositiveButton("Done", new FinishListener(this))

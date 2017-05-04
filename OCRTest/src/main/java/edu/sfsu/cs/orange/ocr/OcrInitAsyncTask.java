@@ -39,8 +39,6 @@ import com.googlecode.tesseract.android.TessBaseAPI;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.res.AssetManager;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -438,7 +436,7 @@ final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
    * @throws IOException
    */
   private void gunzip(File zippedFile, File outFilePath)
-      throws FileNotFoundException, IOException {
+      throws IOException {
     int uncompressedFileSize = getGzipSizeUncompressed(zippedFile);
     Integer percentComplete;
     int percentCompleteLast = 0;
@@ -628,8 +626,7 @@ final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
    * @throws FileNotFoundException
    */
   private boolean installZipFromAssets(String sourceFilename,
-                                       File destinationDir, File destinationFile) throws IOException,
-          FileNotFoundException {
+                                       File destinationDir, File destinationFile) throws IOException {
     String fullAssetPath = "tessdata.zip";
 
     // Attempt to open the zip archive
@@ -663,7 +660,7 @@ final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
         while ((count = inputStream.read(data, 0, BUFFER)) != -1) {
           bufferedOutputStream.write(data, 0, count);
           unzippedSize += count;
-          percentComplete = (int) ((unzippedSize / (long) zippedFileSize) * 100);
+          percentComplete = (int) ((unzippedSize / zippedFileSize) * 100);
           if (percentComplete > percentCompleteLast) {
             publishProgress("Uncompressing data for " + languageName + "...",
                     percentComplete.toString(), "0");
@@ -710,7 +707,7 @@ final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
       activity.resumeOCR();
       activity.showLanguageName();
     } else {
-      activity.showErrorMessage("Error", "Network is unreachable - cannot download language data. "
+      activity.showErrorMessage("Network is unreachable - cannot download language data. "
               + "Please enable network access and restart this app.");
     }
   }

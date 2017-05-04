@@ -17,4 +17,8 @@
  -->
 <resources>
     <string name="app_name">SendSuite OCR</string>
+    <string name="ocr">OCR</string>
+    <string name="translation">Translation</string>
+    <string name="target_language">[Target language]</string>
+    <string name="done">Done</string>
 </resources>

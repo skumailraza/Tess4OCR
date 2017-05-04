@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "edu.sfsu.cs.orange.ocr"
-        minSdkVersion 8
+        minSdkVersion 15
         targetSdkVersion 25
     }
     sourceSets.main {
