@@ -44,6 +44,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.googlecode.tesseract.android.TessBaseAPI;
 
 import org.opencv.android.OpenCVLoader;
@@ -58,6 +59,7 @@ import edu.sfsu.cs.orange.ocr.camera.ShutterButton;
 import edu.sfsu.cs.orange.ocr.dialog.MessageDialogFragment;
 import edu.sfsu.cs.orange.ocr.language.LanguageCodeHelper;
 import edu.sfsu.cs.orange.ocr.language.TranslateAsyncTask;
+import io.fabric.sdk.android.Fabric;
 /**
  * This activity opens the camera and does the actual scanning on a background thread. It draws a
  * viewfinder to help the user place the text correctly, shows feedback as the image processing
@@ -264,6 +266,7 @@ static {
   @Override
   public void onCreate(Bundle icicle) {
     super.onCreate(icicle);
+    Fabric.with(this, new Crashlytics());
 
     checkFirstLaunch();
 
