@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "edu.sfsu.cs.orange.ocr"
-        minSdkVersion 8
-        targetSdkVersion 10
+        minSdkVersion 9
+        targetSdkVersion 22
     }
     sourceSets.main {
         jni.srcDirs = [] //disable automatic ndk-build call
@@ -31,11 +31,11 @@ android {
 }
 
 dependencies {
-    compile 'com.rmtheis:tess-two:5.4.0'
     compile files('libs/google-api-translate-java-0.98-mod2.jar')
     compile files('libs/json_simple-1.1.jar')
     compile files('libs/jtar-1.0.4.jar')
     compile files('libs/microsoft-translator-java-api-0.6-mod.jar')
     compile files('libs/pl2303driver.jar')
     compile project(path: ':openCVLibrary310')
+    compile project(':tess-two')
 }

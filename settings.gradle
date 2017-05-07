@@ -1,2 +1,2 @@
-include ':OCRTest'
+include ':OCRTest', ':tess-two'
 include ':openCVLibrary310'
