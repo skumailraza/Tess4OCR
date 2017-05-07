@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="pl2303driver">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/OCRTest/libs/pl2303driver.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

@@ -1,0 +1,1724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="tesseract"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake\;CMake Files\cmake\templates\;CMake Files\cmake-build-debug\;CMake Files\training\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/srq/Installations/tesseract/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/srq/Installations/tesseract/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/srq/Installations/tesseract/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tesseractmain">
+				<Option output="/home/srq/Installations/tesseract/cmake-build-debug/bin/tesseract" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/srq/Installations/tesseract/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS=1"/>
+					<Add option="-DUSE_STD_NAMESPACE=1"/>
+					<Add option="-DWINDLLNAME=&quot;libtesseract305.dll&quot;"/>
+					<Add option="-DTESS_IMPORTS"/>
+					<Add directory="/usr/local/include/leptonica"/>
+					<Add directory="/home/srq/Installations/tesseract/cmake-build-debug"/>
+					<Add directory="/home/srq/Installations/tesseract/api"/>
+					<Add directory="/home/srq/Installations/tesseract/arch"/>
+					<Add directory="/home/srq/Installations/tesseract/ccmain"/>
+					<Add directory="/home/srq/Installations/tesseract/ccstruct"/>
+					<Add directory="/home/srq/Installations/tesseract/ccutil"/>
+					<Add directory="/home/srq/Installations/tesseract/classify"/>
+					<Add directory="/home/srq/Installations/tesseract/cutil"/>
+					<Add directory="/home/srq/Installations/tesseract/dict"/>
+					<Add directory="/home/srq/Installations/tesseract/lstm"/>
+					<Add directory="/home/srq/Installations/tesseract/opencl"/>
+					<Add directory="/home/srq/Installations/tesseract/textord"/>
+					<Add directory="/home/srq/Installations/tesseract/vs2010/port"/>
+					<Add directory="/home/srq/Installations/tesseract/viewer"/>
+					<Add directory="/home/srq/Installations/tesseract/wordrec"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 tesseractmain"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tesseractmain/fast">
+				<Option output="/home/srq/Installations/tesseract/cmake-build-debug/bin/tesseract" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/srq/Installations/tesseract/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS=1"/>
+					<Add option="-DUSE_STD_NAMESPACE=1"/>
+					<Add option="-DWINDLLNAME=&quot;libtesseract305.dll&quot;"/>
+					<Add option="-DTESS_IMPORTS"/>
+					<Add directory="/usr/local/include/leptonica"/>
+					<Add directory="/home/srq/Installations/tesseract/cmake-build-debug"/>
+					<Add directory="/home/srq/Installations/tesseract/api"/>
+					<Add directory="/home/srq/Installations/tesseract/arch"/>
+					<Add directory="/home/srq/Installations/tesseract/ccmain"/>
+					<Add directory="/home/srq/Installations/tesseract/ccstruct"/>
+					<Add directory="/home/srq/Installations/tesseract/ccutil"/>
+					<Add directory="/home/srq/Installations/tesseract/classify"/>
+					<Add directory="/home/srq/Installations/tesseract/cutil"/>
+					<Add directory="/home/srq/Installations/tesseract/dict"/>
+					<Add directory="/home/srq/Installations/tesseract/lstm"/>
+					<Add directory="/home/srq/Installations/tesseract/opencl"/>
+					<Add directory="/home/srq/Installations/tesseract/textord"/>
+					<Add directory="/home/srq/Installations/tesseract/vs2010/port"/>
+					<Add directory="/home/srq/Installations/tesseract/viewer"/>
+					<Add directory="/home/srq/Installations/tesseract/wordrec"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 tesseractmain/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tesseract">
+				<Option output="/home/srq/Installations/tesseract/cmake-build-debug/libtesseract.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/srq/Installations/tesseract/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTESS_EXPORTS"/>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS=1"/>
+					<Add option="-DUSE_STD_NAMESPACE=1"/>
+					<Add option="-DWINDLLNAME=&quot;libtesseract305.dll&quot;"/>
+					<Add directory="/usr/local/include/leptonica"/>
+					<Add directory="/home/srq/Installations/tesseract/cmake-build-debug"/>
+					<Add directory="/home/srq/Installations/tesseract/api"/>
+					<Add directory="/home/srq/Installations/tesseract/arch"/>
+					<Add directory="/home/srq/Installations/tesseract/ccmain"/>
+					<Add directory="/home/srq/Installations/tesseract/ccstruct"/>
+					<Add directory="/home/srq/Installations/tesseract/ccutil"/>
+					<Add directory="/home/srq/Installations/tesseract/classify"/>
+					<Add directory="/home/srq/Installations/tesseract/cutil"/>
+					<Add directory="/home/srq/Installations/tesseract/dict"/>
+					<Add directory="/home/srq/Installations/tesseract/lstm"/>
+					<Add directory="/home/srq/Installations/tesseract/opencl"/>
+					<Add directory="/home/srq/Installations/tesseract/textord"/>
+					<Add directory="/home/srq/Installations/tesseract/vs2010/port"/>
+					<Add directory="/home/srq/Installations/tesseract/viewer"/>
+					<Add directory="/home/srq/Installations/tesseract/wordrec"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 tesseract"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tesseract/fast">
+				<Option output="/home/srq/Installations/tesseract/cmake-build-debug/libtesseract.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/srq/Installations/tesseract/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTESS_EXPORTS"/>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS=1"/>
+					<Add option="-DUSE_STD_NAMESPACE=1"/>
+					<Add option="-DWINDLLNAME=&quot;libtesseract305.dll&quot;"/>
+					<Add directory="/usr/local/include/leptonica"/>
+					<Add directory="/home/srq/Installations/tesseract/cmake-build-debug"/>
+					<Add directory="/home/srq/Installations/tesseract/api"/>
+					<Add directory="/home/srq/Installations/tesseract/arch"/>
+					<Add directory="/home/srq/Installations/tesseract/ccmain"/>
+					<Add directory="/home/srq/Installations/tesseract/ccstruct"/>
+					<Add directory="/home/srq/Installations/tesseract/ccutil"/>
+					<Add directory="/home/srq/Installations/tesseract/classify"/>
+					<Add directory="/home/srq/Installations/tesseract/cutil"/>
+					<Add directory="/home/srq/Installations/tesseract/dict"/>
+					<Add directory="/home/srq/Installations/tesseract/lstm"/>
+					<Add directory="/home/srq/Installations/tesseract/opencl"/>
+					<Add directory="/home/srq/Installations/tesseract/textord"/>
+					<Add directory="/home/srq/Installations/tesseract/vs2010/port"/>
+					<Add directory="/home/srq/Installations/tesseract/viewer"/>
+					<Add directory="/home/srq/Installations/tesseract/wordrec"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 tesseract/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/srq/Installations/tesseract/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/srq/Installations/tesseract/api/apitypes.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/api/baseapi.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/api/baseapi.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/api/capi.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/api/capi.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/api/pdfrenderer.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/api/renderer.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/api/renderer.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/api/tesseractmain.cpp">
+			<Option target="tesseractmain"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/arch/dotproductavx.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/arch/dotproductavx.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/arch/dotproductsse.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/arch/dotproductsse.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/arch/simddetect.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/arch/simddetect.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/adaptions.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/applybox.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/control.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/control.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/docqual.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/docqual.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/equationdetect.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/equationdetect.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/fixspace.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/fixspace.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/fixxht.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/linerec.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/ltrresultiterator.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/ltrresultiterator.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/mutableiterator.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/osdetect.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/osdetect.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/output.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/output.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/pageiterator.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/pageiterator.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/pagesegmain.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/pagewalk.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/par_control.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/paragraphs.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/paragraphs.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/paragraphs_internal.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/paramsd.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/paramsd.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/pgedit.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/pgedit.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/recogtraining.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/reject.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/reject.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/resultiterator.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/resultiterator.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/superscript.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/tessbox.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/tessbox.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/tessedit.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/tessedit.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/tesseractclass.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/tesseractclass.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/tessvars.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/tessvars.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/tfacepp.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/thresholder.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/thresholder.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/werdit.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccmain/werdit.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/blamer.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/blamer.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/blckerr.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/blobbox.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/blobbox.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/blobs.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/blobs.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/blread.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/blread.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/boxread.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/boxread.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/boxword.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/boxword.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/ccstruct.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/ccstruct.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/coutln.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/coutln.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/crakedge.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/detlinefit.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/detlinefit.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/dppoint.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/dppoint.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/fontinfo.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/fontinfo.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/genblob.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/genblob.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/hpdsizes.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/imagedata.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/imagedata.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/ipoints.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/linlsq.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/linlsq.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/matrix.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/matrix.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/mod128.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/mod128.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/normalis.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/normalis.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/ocrblock.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/ocrblock.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/ocrpara.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/ocrpara.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/ocrrow.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/ocrrow.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/otsuthr.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/otsuthr.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/pageres.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/pageres.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/params_training_featdef.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/params_training_featdef.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/pdblock.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/pdblock.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/points.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/points.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/polyaprx.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/polyaprx.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/polyblk.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/polyblk.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/publictypes.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/publictypes.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/quadlsq.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/quadlsq.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/quadratc.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/quspline.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/quspline.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/ratngs.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/ratngs.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/rect.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/rect.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/rejctmap.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/rejctmap.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/seam.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/seam.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/split.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/split.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/statistc.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/statistc.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/stepblob.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/stepblob.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/vecfuncs.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/vecfuncs.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/werd.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccstruct/werd.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/ambigs.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/ambigs.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/basedir.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/basedir.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/bits16.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/bits16.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/bitvector.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/bitvector.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/ccutil.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/ccutil.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/clst.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/clst.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/doubleptr.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/elst.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/elst.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/elst2.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/elst2.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/errcode.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/errcode.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/fileerr.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/genericheap.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/genericvector.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/globaloc.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/globaloc.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/hashfn.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/helpers.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/host.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/indexmapbidi.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/indexmapbidi.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/kdpair.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/lsterr.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/mainblk.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/memry.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/memry.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/ndminx.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/nwmain.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/object_cache.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/ocrclass.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/params.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/params.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/platform.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/qrsequence.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/scanutils.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/scanutils.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/serialis.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/serialis.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/sorthelper.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/stderr.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/strngs.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/strngs.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/tesscallback.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/tessdatamanager.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/tessdatamanager.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/tprintf.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/tprintf.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/unichar.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/unichar.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/unicharcompress.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/unicharcompress.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/unicharmap.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/unicharmap.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/unicharset.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/unicharset.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/unicity_table.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/unicodes.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/unicodes.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/universalambigs.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/ccutil/universalambigs.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/adaptive.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/adaptive.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/adaptmatch.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/blobclass.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/blobclass.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/classify.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/classify.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/cluster.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/cluster.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/clusttool.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/clusttool.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/cutoffs.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/cutoffs.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/errorcounter.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/errorcounter.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/featdefs.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/featdefs.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/float2int.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/float2int.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/fpoint.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/fpoint.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/intfeaturedist.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/intfeaturedist.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/intfeaturemap.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/intfeaturemap.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/intfeaturespace.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/intfeaturespace.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/intfx.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/intfx.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/intmatcher.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/intmatcher.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/intproto.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/intproto.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/kdtree.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/kdtree.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/mastertrainer.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/mastertrainer.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/mf.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/mf.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/mfdefs.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/mfdefs.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/mfoutline.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/mfoutline.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/mfx.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/mfx.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/normfeat.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/normfeat.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/normmatch.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/normmatch.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/ocrfeatures.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/ocrfeatures.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/outfeat.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/outfeat.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/picofeat.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/picofeat.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/protos.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/protos.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/sampleiterator.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/sampleiterator.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/shapeclassifier.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/shapeclassifier.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/shapetable.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/shapetable.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/tessclassifier.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/tessclassifier.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/trainingsample.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/trainingsample.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/trainingsampleset.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/classify/trainingsampleset.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/bitvec.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/bitvec.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/callcpp.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/callcpp.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/const.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/cutil.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/cutil.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/cutil_class.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/cutil_class.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/danerror.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/danerror.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/efio.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/efio.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/emalloc.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/emalloc.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/freelist.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/freelist.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/globals.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/oldlist.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/oldlist.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/structures.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cutil/structures.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/dict/context.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/dict/dawg.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/dict/dawg.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/dict/dawg_cache.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/dict/dawg_cache.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/dict/dict.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/dict/dict.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/dict/hyphen.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/dict/matchdefs.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/dict/permdawg.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/dict/stopper.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/dict/stopper.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/dict/trie.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/dict/trie.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/convolve.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/convolve.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/ctc.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/ctc.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/fullyconnected.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/fullyconnected.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/functions.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/functions.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/input.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/input.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/lstm.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/lstm.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/lstmrecognizer.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/lstmrecognizer.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/lstmtrainer.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/lstmtrainer.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/maxpool.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/maxpool.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/network.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/network.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/networkbuilder.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/networkbuilder.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/networkio.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/networkio.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/networkscratch.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/parallel.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/parallel.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/plumbing.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/plumbing.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/recodebeam.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/recodebeam.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/reconfig.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/reconfig.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/reversed.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/reversed.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/series.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/series.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/static_shape.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/stridemap.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/stridemap.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/tfnetwork.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/tfnetwork.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/weightmatrix.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/lstm/weightmatrix.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/opencl/oclkernels.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/opencl/opencl_device_selection.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/opencl/openclwrapper.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/opencl/openclwrapper.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/alignedblob.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/alignedblob.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/baselinedetect.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/baselinedetect.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/bbgrid.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/bbgrid.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/blkocc.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/blkocc.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/blobgrid.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/blobgrid.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/ccnontextdetect.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/ccnontextdetect.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/cjkpitch.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/cjkpitch.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/colfind.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/colfind.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/colpartition.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/colpartition.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/colpartitiongrid.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/colpartitiongrid.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/colpartitionset.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/colpartitionset.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/devanagari_processing.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/devanagari_processing.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/drawedg.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/drawedg.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/drawtord.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/drawtord.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/edgblob.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/edgblob.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/edgloop.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/edgloop.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/equationdetectbase.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/equationdetectbase.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/fpchop.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/fpchop.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/gap_map.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/gap_map.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/imagefind.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/imagefind.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/linefind.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/linefind.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/makerow.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/makerow.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/oldbasel.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/oldbasel.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/pithsync.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/pithsync.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/pitsync1.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/pitsync1.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/scanedg.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/scanedg.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/sortflts.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/sortflts.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/strokewidth.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/strokewidth.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/tabfind.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/tabfind.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/tablefind.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/tablefind.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/tablerecog.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/tablerecog.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/tabvector.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/tabvector.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/textlineprojection.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/textlineprojection.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/textord.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/textord.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/topitch.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/topitch.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/tordmain.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/tordmain.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/tospace.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/tovars.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/tovars.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/underlin.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/underlin.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/wordseg.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/wordseg.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/workingpartset.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/textord/workingpartset.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/viewer/scrollview.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/viewer/scrollview.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/viewer/svmnode.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/viewer/svmnode.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/viewer/svpaint.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/viewer/svutil.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/viewer/svutil.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/vs2010/tesseract/resource.h">
+			<Option target="tesseractmain"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/vs2010/tesseract/tesseract.rc">
+			<Option target="tesseractmain"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/associate.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/associate.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/chop.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/chop.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/chopper.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/chopper.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/drawfx.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/drawfx.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/findseam.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/findseam.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/gradechop.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/gradechop.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/language_model.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/language_model.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/lm_consistency.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/lm_consistency.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/lm_pain_points.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/lm_pain_points.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/lm_state.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/lm_state.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/measure.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/outlines.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/outlines.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/params_model.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/params_model.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/pieces.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/plotedges.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/plotedges.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/render.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/render.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/segsearch.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/tface.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/wordclass.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/wordrec.cpp">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/wordrec/wordrec.h">
+			<Option target="tesseract"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cmake/Configure.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cmake/BuildFunctions.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cmake/SourceGroups.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cmake/templates/TesseractConfig-version.cmake.in">
+			<Option virtualFolder="CMake Files\cmake\templates\"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cmake/templates/TesseractConfig.cmake.in">
+			<Option virtualFolder="CMake Files\cmake\templates\"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/cmake-build-debug/config_auto.h.in">
+			<Option virtualFolder="CMake Files\cmake-build-debug\"/>
+		</Unit>
+		<Unit filename="/home/srq/Installations/tesseract/training/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\training\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

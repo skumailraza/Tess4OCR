@@ -1,0 +1,233 @@
+Determining if the CL_VERSION_2_0 exist failed with the following output:
+Change Dir: /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9ff22/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9ff22.dir/build.make CMakeFiles/cmTC_9ff22.dir/build
+make[1]: Entering directory '/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9ff22.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_9ff22.dir/CheckSymbolExists.c.o   -c /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:47: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_9ff22.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_9ff22.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_9ff22.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_9ff22/fast' failed
+make: *** [cmTC_9ff22/fast] Error 2
+
+File /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_0
+  return ((int*)(&CL_VERSION_2_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_2 exist failed with the following output:
+Change Dir: /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7670d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7670d.dir/build.make CMakeFiles/cmTC_7670d.dir/build
+make[1]: Entering directory '/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7670d.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_7670d.dir/CheckSymbolExists.c.o   -c /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:47: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_7670d.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_7670d.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_7670d.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7670d/fast' failed
+make: *** [cmTC_7670d/fast] Error 2
+
+File /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_2
+  return ((int*)(&CL_VERSION_1_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_1 exist failed with the following output:
+Change Dir: /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0a223/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0a223.dir/build.make CMakeFiles/cmTC_0a223.dir/build
+make[1]: Entering directory '/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0a223.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_0a223.dir/CheckSymbolExists.c.o   -c /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:47: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_0a223.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_0a223.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_0a223.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_0a223/fast' failed
+make: *** [cmTC_0a223/fast] Error 2
+
+File /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_1
+  return ((int*)(&CL_VERSION_1_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_0 exist failed with the following output:
+Change Dir: /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_005b5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_005b5.dir/build.make CMakeFiles/cmTC_005b5.dir/build
+make[1]: Entering directory '/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_005b5.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_005b5.dir/CheckSymbolExists.c.o   -c /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:47: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_005b5.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_005b5.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_005b5.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_005b5/fast' failed
+make: *** [cmTC_005b5/fast] Error 2
+
+File /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_0
+  return ((int*)(&CL_VERSION_1_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if files CL/cl.h exist failed with the following output:
+Change Dir: /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6e58f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6e58f.dir/build.make CMakeFiles/cmTC_6e58f.dir/build
+make[1]: Entering directory '/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6e58f.dir/CheckIncludeFiles.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_6e58f.dir/CheckIncludeFiles.c.o   -c /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:19: fatal error: CL/cl.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_6e58f.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_6e58f.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_6e58f.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_6e58f/fast' failed
+make: *** [cmTC_6e58f/fast] Error 2
+
+Source:
+/* */
+#include <CL/cl.h>
+
+
+int main(void){return 0;}
+
+Determining if files OpenCL/cl.h exist failed with the following output:
+Change Dir: /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_27572/fast"
+/usr/bin/make -f CMakeFiles/cmTC_27572.dir/build.make CMakeFiles/cmTC_27572.dir/build
+make[1]: Entering directory '/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_27572.dir/CheckIncludeFiles.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_27572.dir/CheckIncludeFiles.c.o   -c /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:23: fatal error: OpenCL/cl.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_27572.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_27572.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_27572.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_27572/fast' failed
+make: *** [cmTC_27572/fast] Error 2
+
+Source:
+/* */
+#include <OpenCL/cl.h>
+
+
+int main(void){return 0;}
+
+Determining size of mbstate_t failed with the following output:
+Change Dir: /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e63a1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e63a1.dir/build.make CMakeFiles/cmTC_e63a1.dir/build
+make[1]: Entering directory '/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e63a1.dir/HAVE_MBSTATE_T.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_e63a1.dir/HAVE_MBSTATE_T.c.o   -c /home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CheckTypeSize/HAVE_MBSTATE_T.c
+/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CheckTypeSize/HAVE_MBSTATE_T.c:17:22: error: ‘mbstate_t’ undeclared here (not in a function)
+ #define SIZE (sizeof(mbstate_t))
+                      ^
+/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CheckTypeSize/HAVE_MBSTATE_T.c:19:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 10000)%10)),
+            ^
+CMakeFiles/cmTC_e63a1.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_e63a1.dir/HAVE_MBSTATE_T.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e63a1.dir/HAVE_MBSTATE_T.c.o] Error 1
+make[1]: Leaving directory '/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e63a1/fast' failed
+make: *** [cmTC_e63a1/fast] Error 2
+
+/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/CheckTypeSize/HAVE_MBSTATE_T.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#endif
+
+#define SIZE (sizeof(mbstate_t))
+char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+

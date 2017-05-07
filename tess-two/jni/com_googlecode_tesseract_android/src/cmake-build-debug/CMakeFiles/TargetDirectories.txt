@@ -1,0 +1,6 @@
+/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/tesseractmain.dir
+/home/srq/Installations/tesseract/cmake-build-debug/CMakeFiles/tesseract.dir
+/home/srq/Installations/tesseract/cmake-build-debug/training/CMakeFiles/rebuild_cache.dir
+/home/srq/Installations/tesseract/cmake-build-debug/training/CMakeFiles/edit_cache.dir

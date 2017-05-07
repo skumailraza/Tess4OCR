@@ -1,0 +1,2 @@
+Options: 
+CMake: 3.7.1@/home/srq/Installations/clion-2016.3.2/bin/cmake/bin/cmake
