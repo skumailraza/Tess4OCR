@@ -52,7 +52,9 @@
           android:layout_height="fill_parent"
           android:gravity="right|center_vertical">
 
-        <ImageView android:id="@+id/image_view"
+        <ImageView
+            android:contentDescription="@string/app_name"
+            android:id="@+id/image_view"
                    android:layout_width="160dip"
                    android:layout_height="wrap_content"
                    android:maxWidth="160dip"
@@ -69,7 +71,7 @@
           <TextView android:id="@+id/source_language_text_view_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="OCR"
+                    android:text="@string/ocr"
                     android:textColor="@color/result_minor_text"
                     android:textStyle="bold"
                     android:textSize="14sp"
@@ -93,7 +95,7 @@
           <TextView android:id="@+id/translation_language_label_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Translation"
+                    android:text="@string/translation"
                     android:textColor="@color/translation_text"
                     android:textStyle="bold"
                     android:textSize="14sp"
@@ -106,7 +108,7 @@
                     android:textColor="@color/translation_text"
                     android:textSize="14sp"
                     android:typeface="sans"
-                    android:text="[Target language]"/>
+                    android:text="@string/target_language"/>
 
         </LinearLayout>
 

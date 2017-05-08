@@ -15,15 +15,15 @@
  */
 package edu.sfsu.cs.orange.ocr.language;
 
-import edu.sfsu.cs.orange.ocr.CaptureActivity;
-import edu.sfsu.cs.orange.ocr.R;
-
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
+
+import edu.sfsu.cs.orange.ocr.CaptureActivity;
+import edu.sfsu.cs.orange.ocr.R;
 
 /**
  * Class to perform translations in the background.
@@ -48,7 +48,7 @@ public final class TranslateAsyncTask extends AsyncTask<String, String, Boolean>
     this.targetLanguageCode = targetLanguageCode;
     this.sourceText = sourceText;
     textView = (TextView) activity.findViewById(R.id.translation_text_view);
-    progressView = (View) activity.findViewById(R.id.indeterminate_progress_indicator_view);
+    progressView = activity.findViewById(R.id.indeterminate_progress_indicator_view);
     targetLanguageTextView = (TextView) activity.findViewById(R.id.translation_language_text_view);
   }
   
@@ -57,11 +57,8 @@ public final class TranslateAsyncTask extends AsyncTask<String, String, Boolean>
     translatedText = Translator.translate(activity, sourceLanguageCode, targetLanguageCode, sourceText);
 
     // Check for failed translations.
-    if (translatedText.equals(Translator.BAD_TRANSLATION_MSG)) {
-      return false;
-    }
-    
-    return true;
+      return !translatedText.equals(Translator.BAD_TRANSLATION_MSG);
+
   }
 
   @Override

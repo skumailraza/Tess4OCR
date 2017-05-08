@@ -19,6 +19,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import android.graphics.Bitmap;
+import android.graphics.ImageFormat;
 import android.graphics.Rect;
 import android.os.AsyncTask;
 import android.os.Environment;
@@ -30,6 +31,13 @@ import com.googlecode.leptonica.android.ReadFile;
 import com.googlecode.tesseract.android.ResultIterator;
 import com.googlecode.tesseract.android.TessBaseAPI;
 import com.googlecode.tesseract.android.TessBaseAPI.PageIteratorLevel;
+
+import org.opencv.android.Utils;
+import org.opencv.core.CvType;
+import org.opencv.core.Mat;
+import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.utils.*;
+import com.googlecode.leptonica.android.*;
 /**
  * Class to send OCR requests to the OCR engine in a separate thread, send a success/failure message,
  * and dismiss the indeterminate progress dialog box. Used for non-continuous mode OCR only.
@@ -60,26 +68,47 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
   protected Boolean doInBackground(Void... arg0) {
     long start = System.currentTimeMillis();
     Bitmap bitmap = activity.getCameraManager().buildLuminanceSource(data, width, height).renderCroppedGreyscaleBitmap();
+
     String textResult;
+    Mat image = new Mat();
+    Utils.bitmapToMat(bitmap,image);
+    Mat gray = new Mat();
+    Utils.bitmapToMat(bitmap,gray);
 
-    //      if (PERFORM_FISHER_THRESHOLDING) {
-    //        Pix thresholdedImage = Thresholder.fisherAdaptiveThreshold(ReadFile.readBitmap(bitmap), 48, 48, 0.1F, 2.5F);
-    //        Log.e("OcrRecognizeAsyncTask", "thresholding completed. converting to bmp. size:" + bitmap.getWidth() + "x" + bitmap.getHeight());
-    //        bitmap = WriteFile.writeBitmap(thresholdedImage);
-    //      }
-    //      if (PERFORM_OTSU_THRESHOLDING) {
-    //        Pix thresholdedImage = Binarize.otsuAdaptiveThreshold(ReadFile.readBitmap(bitmap), 48, 48, 9, 9, 0.1F);
-    //        Log.e("OcrRecognizeAsyncTask", "thresholding completed. converting to bmp. size:" + bitmap.getWidth() + "x" + bitmap.getHeight());
-    //        bitmap = WriteFile.writeBitmap(thresholdedImage);
-    //      }
-    //      if (PERFORM_SOBEL_THRESHOLDING) {
-    //        Pix thresholdedImage = Thresholder.sobelEdgeThreshold(ReadFile.readBitmap(bitmap), 64);
-    //        Log.e("OcrRecognizeAsyncTask", "thresholding completed. converting to bmp. size:" + bitmap.getWidth() + "x" + bitmap.getHeight());
-    //        bitmap = WriteFile.writeBitmap(thresholdedImage);
-    //      }
+    Mat background = new Mat();
+    Utils.bitmapToMat(bitmap,background);   //to test with BinarizeBG
+    Mat finalimage = new Mat();
+    Utils.bitmapToMat(bitmap,finalimage);
 
-    try {     
+    //image.convertTo( gray,CvType.CV_8UC1);
+    //image.convertTo(image,CvType.CV_64F);
+    try {
+      Imgcodecs.imwrite("/storage/emulated/0/DCIM/orig.jpg",image);
+      OpencvNativeClass.BinarizeShafait(gray.getNativeObjAddr(),image.getNativeObjAddr());
+
+
+      Imgcodecs.imwrite("/storage/emulated/0/DCIM/binarized.jpg",image);
+      Utils.matToBitmap(image,bitmap);
+
+      //Pix fimage = ReadFile.readBitmap(bitmap);
+      //fimage = Binarize.otsuAdaptiveThreshold(fimage);
+
+      //float angle = Skew.findSkew(fimage);
+      //Log.i("Skew: ", Float.toString(angle));
+      //double deg2rad = 3.14159265 / 180.;
+
+      //fimage = Rotate.rotate(fimage, angle);
+
+      //bitmap = WriteFile.writeBitmap(fimage);
+
+      Mat skewed = new Mat();
+
+      //Utils.bitmapToMat(bitmap,skewed);
+      //Imgcodecs.imwrite("/storage/emulated/0/DCIM/deskewed.jpg", skewed);
+
       baseApi.setImage(ReadFile.readBitmap(bitmap));
+
+
       textResult = baseApi.getUTF8Text();
       timeRequired = System.currentTimeMillis() - start;
 
@@ -87,6 +116,7 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
       if (textResult == null || textResult.equals("")) {
         return false;
       }
+
       ocrResult = new OcrResult();
       ocrResult.setWordConfidences(baseApi.wordConfidences());
       ocrResult.setMeanConfidence( baseApi.meanConfidence());
@@ -122,7 +152,23 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
     }
     timeRequired = System.currentTimeMillis() - start;
     ocrResult.setBitmap(bitmap);
-    ocrResult.setText(textResult);
+    String[] temp = textResult.split("\n");
+    if(temp.length!=0)
+      textResult="";
+    for(int i=0;i<temp.length;i++)
+    {
+      if(temp[i].length()!=0){
+        if(i<temp.length-1){
+          textResult = textResult + temp[i] + "\n";
+        }
+        else
+          textResult = textResult + temp[i];
+      }
+    }
+    String textResult2=ParsingNativeClass.ParseAddress(textResult);
+    Log.d("Return parsing",textResult2);
+    ocrResult.setViewtext(textResult);
+    ocrResult.setText(textResult2);
     ocrResult.setRecognitionTimeRequired(timeRequired);
     return true;
   }

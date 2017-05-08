@@ -1,5 +1,6 @@
 package edu.sfsu.cs.orange.ocr;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -19,6 +20,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.text.ClipboardManager;
 import android.text.SpannableStringBuilder;
 import android.text.style.CharacterStyle;
@@ -41,9 +44,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.googlecode.tesseract.android.TessBaseAPI;
 
-import java.io.DataOutputStream;
+import org.opencv.android.OpenCVLoader;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.regex.Matcher;
@@ -51,11 +56,10 @@ import java.util.regex.Pattern;
 
 import edu.sfsu.cs.orange.ocr.camera.CameraManager;
 import edu.sfsu.cs.orange.ocr.camera.ShutterButton;
+import edu.sfsu.cs.orange.ocr.dialog.MessageDialogFragment;
 import edu.sfsu.cs.orange.ocr.language.LanguageCodeHelper;
 import edu.sfsu.cs.orange.ocr.language.TranslateAsyncTask;
-
-
-import edu.sfsu.cs.orange.ocr.KBWedge;
+import io.fabric.sdk.android.Fabric;
 /**
  * This activity opens the camera and does the actual scanning on a background thread. It draws a
  * viewfinder to help the user place the text correctly, shows feedback as the image processing
@@ -63,8 +67,25 @@ import edu.sfsu.cs.orange.ocr.KBWedge;
  * <p>
  * The code for this class was adapted from the ZXing project: http://code.google.com/p/zxing/
  */
+
+
 public final class CaptureActivity extends Activity implements SurfaceHolder.Callback, ShutterButton.OnShutterButtonListener {
 
+private static final int CAMERA_PERMISSION_REQUEST_CODE = 100;
+private static final int WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 110;
+
+//added to init opencv//
+  static {
+    if(!OpenCVLoader.initDebug()) {
+      Log.d("ERROR", "Unable to load OpenCV");
+    } else {
+      Log.d("SUCCESS", "OpenCV loaded");
+    }
+  }
+static {
+  System.loadLibrary("MyOpencvLibs");
+  System.loadLibrary("MyParsingLibs");
+}
   private static final String TAG = CaptureActivity.class.getSimpleName();
 
   // Note: These constants will be overridden by any default values defined in preferences.xml.
@@ -77,7 +98,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   /**
    * ISO 639-1 language code indicating the default target language for translation.
    */
-  public static final String DEFAULT_TARGET_LANGUAGE_CODE = "es";
+  public static final String DEFAULT_TARGET_LANGUAGE_CODE = "en";
 
   /**
    * The default online machine translation service to use.
@@ -122,7 +143,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   /**
    * Whether to enable the use of online translation services be default.
    */
-  public static final boolean DEFAULT_TOGGLE_TRANSLATION = true;
+  public static final boolean DEFAULT_TOGGLE_TRANSLATION = false;
 
   /**
    * Whether the light should be initially activated by default.
@@ -162,11 +183,13 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   /**
    * Resource to use for data file downloads.
    */
-  static final String DOWNLOAD_BASE = "https://cytranet.dl.sourceforge.net/project/tesseract-ocr-alt/";
-
+  //static final String DOWNLOAD_BASE = "http://tesseract-ocr.googlecode.com/files/";
+  static final String DOWNLOAD_BASE = "https://sourceforge.net/projects/tesseract-ocr-alt/files/";
+  //https://sourceforge.net/projects/tesseract-ocr-alt/files/tesseract-ocr-3.01.osd.tar.gz/download
   /**
    * Download filename for orientation and script detection (OSD) data.
    */
+  //static final String OSD_FILENAME = "tesseract-ocr-3.01.osd.tar";
   static final String OSD_FILENAME = "tesseract-ocr-3.01.osd.tar";
 
   /**
@@ -243,6 +266,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   @Override
   public void onCreate(Bundle icicle) {
     super.onCreate(icicle);
+    Fabric.with(this, new Crashlytics());
 
     checkFirstLaunch();
 
@@ -256,7 +280,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     mKbWedge = new KBWedge((UsbManager) getSystemService(Context.USB_SERVICE),this, ACTION_USB_PERMISSION);
 
 
-      mKbWedge.Open();
+    mKbWedge.Open();
 
     Window window = getWindow();
     window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -287,7 +311,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     translationView = (TextView) findViewById(R.id.translation_text_view);
     registerForContextMenu(translationView);
 
-    progressView = (View) findViewById(R.id.indeterminate_progress_indicator_view);
+    progressView = findViewById(R.id.indeterminate_progress_indicator_view);
 
     cameraManager = new CameraManager(getApplication());
     viewfinderView.setCameraManager(cameraManager);
@@ -368,41 +392,13 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     isEngineReady = false;
   }
 
+
+
+
   @Override
   protected void onResume() {
     super.onResume();
-    resetStatusView();
-
-    String previousSourceLanguageCodeOcr = sourceLanguageCodeOcr;
-    int previousOcrEngineMode = ocrEngineMode;
-
-    retrievePreferences();
-
-    //if(mKbWedge != null)
-    //  mKbWedge.onResume(); // must call this
-
-    // Set up the camera preview surface.
-    surfaceView = (SurfaceView) findViewById(R.id.preview_view);
-    surfaceHolder = surfaceView.getHolder();
-    if (!hasSurface) {
-      surfaceHolder.addCallback(this);
-      surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
-    }
-
-
-    // Do OCR engine initialization, if necessary
-    boolean doNewInit = (baseApi == null) || !sourceLanguageCodeOcr.equals(previousSourceLanguageCodeOcr) ||
-            ocrEngineMode != previousOcrEngineMode;
-    if (doNewInit) {
-      // Initialize the OCR engine
-      File storageDirectory = getStorageDirectory();
-      if (storageDirectory != null) {
-        initOcrEngine(storageDirectory, sourceLanguageCodeOcr, sourceLanguageReadable);
-      }
-    } else {
-      // We already have the engine initialized, so just start the camera.
-      resumeOCR();
-    }
+      checkPermissions();
   }
 
   /**
@@ -424,7 +420,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     }
     if (baseApi != null) {
       baseApi.setPageSegMode(pageSegmentationMode);
-      baseApi.setVariable(TessBaseAPI.VAR_CHAR_BLACKLIST, characterBlacklist);
+      //baseApi.setVariable(TessBaseAPI.VAR_CHAR_BLACKLIST, characterBlacklist);
+      baseApi.setVariable(TessBaseAPI.VAR_CHAR_BLACKLIST, "_.,/~`\"\'?!;+*%$");
       baseApi.setVariable(TessBaseAPI.VAR_CHAR_WHITELIST, characterWhitelist);
     }
 
@@ -500,11 +497,11 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       handler = new CaptureActivityHandler(this, cameraManager, isContinuousModeActive);
 
     } catch (IOException ioe) {
-      showErrorMessage("Error", "Could not initialize camera. Please try restarting device.");
+      showErrorMessage("Could not initialize camera. Please try restarting device.");
     } catch (RuntimeException e) {
       // Barcode Scanner has seen crashes in the wild of this variety:
       // java.?lang.?RuntimeException: Fail to connect to camera service
-      showErrorMessage("Error", "Could not initialize camera. Please try restarting device.");
+      showErrorMessage("Could not initialize camera. Please try restarting device.");
     }
   }
 
@@ -649,7 +646,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       state = Environment.getExternalStorageState();
     } catch (RuntimeException e) {
       Log.e(TAG, "Is the SD card visible?", e);
-      showErrorMessage("Error", "Required external storage (such as an SD card) is unavailable.");
+      showErrorMessage("Required external storage (such as an SD card) is unavailable.");
     }
 
     if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
@@ -663,7 +660,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       } catch (NullPointerException e) {
         // We get an error here if the SD card is visible, but full
         Log.e(TAG, "External storage is unavailable");
-        showErrorMessage("Error", "Required external storage (such as an SD card) is full or unavailable.");
+        showErrorMessage("Required external storage (such as an SD card) is full or unavailable.");
       }
 
       //        } else {
@@ -677,13 +674,13 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     } else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
       // We can only read the media
       Log.e(TAG, "External storage is read-only");
-      showErrorMessage("Error",
+      showErrorMessage(
               "Required external storage (such as an SD card) is unavailable for data storage.");
     } else {
       // Something else is wrong. It may be one of many other states, but all we need
       // to know is we can neither read nor write
       Log.e(TAG, "External storage is unavailable");
-      showErrorMessage("Error", "Required external storage (such as an SD card) is unavailable or corrupted.");
+      showErrorMessage("Required external storage (such as an SD card) is unavailable or corrupted.");
     }
     return null;
   }
@@ -719,7 +716,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
           SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
           prefs.edit()
                   .putString(PreferencesActivity.KEY_OCR_ENGINE_MODE, getOcrEngineModeName())
-                  .commit();
+                  .apply();
         }
       }
     }
@@ -737,7 +734,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         prefs.edit()
                 .putString(PreferencesActivity.KEY_OCR_ENGINE_MODE, getOcrEngineModeName())
-                .commit();
+                .apply();
       }
     }
 
@@ -764,8 +761,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       Log.d(TAG, "Disabling continuous preview");
       isContinuousModeActive = false;
       SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-      prefs.edit()
-              .putBoolean(PreferencesActivity.KEY_CONTINUOUS_PREVIEW, false);
+      prefs.edit().putBoolean(PreferencesActivity.KEY_CONTINUOUS_PREVIEW, false).apply();
     }
 
     // Start AsyncTask to install language data and init OCR
@@ -781,13 +777,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
    * @return True if a non-null result was received for OCR
    */
   boolean handleOcrDecode(OcrResult ocrResult) {
-
-//    String Result1 = ocrResult.toString();
-//    Result1.replaceAll("\n\n", "\n");
-      lastResult = ocrResult;
-    //lastResult.setText(Result1);
-//    ocrResult.setText(Result1);
-
+    lastResult = ocrResult;
 
     // Test whether the result is null
     if (ocrResult.getText() == null || ocrResult.getText()
@@ -818,17 +808,17 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     TextView sourceLanguageTextView = (TextView) findViewById(R.id.source_language_text_view);
     sourceLanguageTextView.setText(sourceLanguageReadable);
     TextView ocrResultTextView = (TextView) findViewById(R.id.ocr_result_text_view);
-    ocrResultTextView.setText(ocrResult.getText());
+    //changing for text view
+    ocrResultTextView.setText(ocrResult.getViewtext());
     // Crudely scale betweeen 22 and 32 -- bigger font for shorter text
     int scaledSize = Math.max(22, 32 - ocrResult.getText()
             .length() / 4);
     ocrResultTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, scaledSize);
 
-
     TextView translationLanguageLabelTextView = (TextView) findViewById(R.id.translation_language_label_text_view);
     TextView translationLanguageTextView = (TextView) findViewById(R.id.translation_language_text_view);
     TextView translationTextView = (TextView) findViewById(R.id.translation_text_view);
-    if (!isTranslationActive) {
+    if (isTranslationActive) {
       // Handle translation text fields
       translationLanguageLabelTextView.setVisibility(View.VISIBLE);
       translationLanguageTextView.setText(targetLanguageReadable);
@@ -853,6 +843,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       //Here is the hook----->
 
       try {
+        Log.d("DEBUG", "I TRIED!");
         //Process su = Runtime.getRuntime()
         //        .exec("su");
         //DataOutputStream outputStream = new DataOutputStream(su.getOutputStream());
@@ -881,41 +872,45 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         // first line: name
         // everything in between: address
         // last line: city + state + zip
-
+        String Result = "";
+        
         String[] lines = ocrResult.getText().split("\n");
+        for(int i=0;i<lines.length;i++)Log.d("output:",lines[i]);
         String name = lines[0];
         String cityStateZip = lines[lines.length - 1];
+        int addressLinesIndex=1;
+        if(lines.length==9){
+          mKbWedge.Write(name);
+          mKbWedge.Write("\t");
+          mKbWedge.Write(lines[1]);
+          addressLinesIndex = 2;
+          Result +=name + "<TAB>" + lines[1];
+        }
+        else {
+          mKbWedge.Write("\t"); //Attention/Company
+          mKbWedge.Write(name);
+          Result+="<TAB>"+name;
+        }
 
-        // skip the attention field
-        //writeText(outputStream, ".");
-        //writeText(outputStream, "\t");
         mKbWedge.Write("\t");
-
-        // write the first line: name
-        //writeText(outputStream, name);
-        //writeText(outputStream, "\t");
-        mKbWedge.Write(name);
-        mKbWedge.Write("\t");
-
+        Result += "<TAB>";
         // write at most 3 address lines
         int addressLineCount = 0;
-        //for (int i = 1; i < lines.length - 1 && addressLineCount < 3; ++i) {
-        for (int i = 0; i < lines.length - 1 && addressLineCount < 4; ++i) {
+        for (int i = addressLinesIndex; i < lines.length && addressLineCount < 8; ++i) {
+           Log.d("indexes:",Integer.toString(i));
+          Log.d("adl:",Integer.toString(addressLineCount));
 
-          //writeText(outputStream, lines[i]);
-          //writeText(outputStream, "\t");
           mKbWedge.Write(lines[i]);
-          Log.i("out", "lines[i]");
-          Log.i("out","<tab>");
           mKbWedge.Write("\t");
-
+          Result += lines[i] +"<TAB>";
           addressLineCount++;
+          Log.d("kbwedge",lines[i]);
         }
         // if less than 3 address lines were written, write tabs for the missed
-        for (int i = addressLineCount; i < 4; ++i) {
+        for (int i = addressLineCount; i < 8; ++i) {
           //writeText(outputStream, "\t");
-          Log.i("out","<tab>");
           mKbWedge.Write("\t");
+          Result += "<TAB>";
         }
 
         // try to match last line against city+state+zip pattern
@@ -932,7 +927,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 
           mKbWedge.Write(matcher.group(1).replaceAll(",", ""));
           mKbWedge.Write("\t");
-
           // extract and write state
           //writeText(outputStream, matcher.group(2));
           //writeText(outputStream, "\t");
@@ -944,30 +938,15 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
           //writeText(outputStream, "\t");
           mKbWedge.Write(matcher.group(3));
           mKbWedge.Write("\t");
+
+          Result += matcher.group(1).replaceAll(",", "") + "<TAB>" + matcher.group(2) + "<TAB>" + matcher.group(3) + "<TAB>";
         }
-
-        //outputStream.writeBytes("echo a | ./hid-gadget-test /dev/hidg0 keyboard\n");
-        //outputStream.flush();
-
-        //outputStream.writeBytes("exit\n");
-        //outputStream.flush();
-        //str = null;
-        //su.waitFor();
-
-
-        //} catch (IOException e) {
-        //e.printStackTrace();
-        //} catch (InterruptedException e) {
-        //e.printStackTrace();
-        //}
-        //}
-        //return true;
+        //System.out.println(Result);
       } catch (Exception e) {
         e.printStackTrace();
-     // } catch (Exception e) {
-     //   e.printStackTrace();
       }
     }
+
     return true;
   }
   //void writeText(DataOutputStream outputStream, String str) throws IOException, InterruptedException {
@@ -992,8 +971,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   //       case '\n':
   //          cmd = "enter";
   //          break;
-   //       case '.':
-   //         cmd = "stop";
+  //       case '.':
+  //         cmd = "stop";
   //          break;
   //        case '-':
   //          cmd = "dash";
@@ -1009,10 +988,10 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   //    outputStream.writeBytes("echo " + cmd + " | ./hid-gadget-test /dev/hidg0 keyboard\n");
 
   //    Thread.sleep(20);
-   // }
+  // }
   //}
-   // Displays information relating to the results of a successful real-time OCR request.
-   //@param ocrResult Object representing successful OCR results
+  // Displays information relating to the results of a successful real-time OCR request.
+  //@param ocrResult Object representing successful OCR results
 
   void handleOcrContinuousDecode(OcrResult ocrResult) {
 
@@ -1066,7 +1045,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       statusViewBottom.setTextSize(14);
       CharSequence cs = setSpanBetweenTokens(
               "OCR: " + sourceLanguageReadable + " - OCR failed - Time required: " + obj.getTimeRequired() + " ms",
-              "-", new ForegroundColorSpan(0xFFFF0000));
+              new ForegroundColorSpan(0xFFFF0000));
       statusViewBottom.setText(cs);
     }
   }
@@ -1083,13 +1062,13 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
    * ForegroundColorSpan(0xFFFF0000));} will return a CharSequence {@code
    * "Hello world!"} with {@code world} in red.
    */
-  private CharSequence setSpanBetweenTokens(CharSequence text, String token, CharacterStyle... cs) {
+  private CharSequence setSpanBetweenTokens(CharSequence text, CharacterStyle... cs) {
     // Start and end refer to the points where the span will apply
-    int tokenLen = token.length();
+    int tokenLen = "-".length();
     int start = text.toString()
-            .indexOf(token) + tokenLen;
+            .indexOf("-") + tokenLen;
     int end = text.toString()
-            .indexOf(token, start);
+            .indexOf("-", start);
 
     if (start > -1 && end > -1) {
       // Copy the spannable string to a mutable spannable string
@@ -1199,7 +1178,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 
   @SuppressWarnings("unused")
   void setButtonVisibility(boolean visible) {
-    if (shutterButton != null && visible == true && DISPLAY_SHUTTER_BUTTON) {
+    if (shutterButton != null && visible && DISPLAY_SHUTTER_BUTTON) {
       shutterButton.setVisibility(View.VISIBLE);
     } else if (shutterButton != null) {
       shutterButton.setVisibility(View.GONE);
@@ -1264,17 +1243,13 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       int currentVersion = info.versionCode;
       SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
       int lastVersion = prefs.getInt(PreferencesActivity.KEY_HELP_VERSION_SHOWN, 0);
-      if (lastVersion == 0) {
-        isFirstLaunch = true;
-      } else {
-        isFirstLaunch = false;
-      }
+        isFirstLaunch = lastVersion == 0;
       if (currentVersion > lastVersion) {
 
         // Record the last version for which we last displayed the What's New (Help) page
         prefs.edit()
                 .putInt(PreferencesActivity.KEY_HELP_VERSION_SHOWN, currentVersion)
-                .commit();
+                .apply();
         Intent intent = new Intent(this, HelpActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
 
@@ -1321,14 +1296,9 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     setTargetLanguage(prefs.getString(PreferencesActivity.KEY_TARGET_LANGUAGE_PREFERENCE,
             CaptureActivity.DEFAULT_TARGET_LANGUAGE_CODE));
     isTranslationActive = prefs.getBoolean(PreferencesActivity.KEY_TOGGLE_TRANSLATION, false);
-    Log.d("translation", " "+ isTranslationActive);
 
     // Retrieve from preferences, and set in this Activity, the capture mode preference
-    if (prefs.getBoolean(PreferencesActivity.KEY_CONTINUOUS_PREVIEW, CaptureActivity.DEFAULT_TOGGLE_CONTINUOUS)) {
-      isContinuousModeActive = true;
-    } else {
-      isContinuousModeActive = false;
-    }
+      isContinuousModeActive = prefs.getBoolean(PreferencesActivity.KEY_CONTINUOUS_PREVIEW, CaptureActivity.DEFAULT_TOGGLE_CONTINUOUS);
 
     // Retrieve from preferences, and set in this Activity, the page segmentation mode preference
     String[] pageSegmentationModes = getResources().getStringArray(R.array.pagesegmentationmodes);
@@ -1383,75 +1353,75 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     // Continuous preview
     prefs.edit()
             .putBoolean(PreferencesActivity.KEY_CONTINUOUS_PREVIEW, CaptureActivity.DEFAULT_TOGGLE_CONTINUOUS)
-            .commit();
+            .apply();
 
     // Recognition language
     prefs.edit()
             .putString(PreferencesActivity.KEY_SOURCE_LANGUAGE_PREFERENCE, CaptureActivity.DEFAULT_SOURCE_LANGUAGE_CODE)
-            .commit();
+            .apply();
 
     // Translation
     prefs.edit()
             .putBoolean(PreferencesActivity.KEY_TOGGLE_TRANSLATION, CaptureActivity.DEFAULT_TOGGLE_TRANSLATION)
-            .commit();
+            .apply();
 
     // Translation target language
     prefs.edit()
             .putString(PreferencesActivity.KEY_TARGET_LANGUAGE_PREFERENCE, CaptureActivity.DEFAULT_TARGET_LANGUAGE_CODE)
-            .commit();
+            .apply();
 
     // Translator
     prefs.edit()
             .putString(PreferencesActivity.KEY_TRANSLATOR, CaptureActivity.DEFAULT_TRANSLATOR)
-            .commit();
+            .apply();
 
     // OCR Engine
     prefs.edit()
             .putString(PreferencesActivity.KEY_OCR_ENGINE_MODE, CaptureActivity.DEFAULT_OCR_ENGINE_MODE)
-            .commit();
+            .apply();
 
     // Autofocus
     prefs.edit()
             .putBoolean(PreferencesActivity.KEY_AUTO_FOCUS, CaptureActivity.DEFAULT_TOGGLE_AUTO_FOCUS)
-            .commit();
+            .apply();
 
     // Disable problematic focus modes
     prefs.edit()
             .putBoolean(PreferencesActivity.KEY_DISABLE_CONTINUOUS_FOCUS,
                     CaptureActivity.DEFAULT_DISABLE_CONTINUOUS_FOCUS)
-            .commit();
+            .apply();
 
     // Beep
     prefs.edit()
             .putBoolean(PreferencesActivity.KEY_PLAY_BEEP, CaptureActivity.DEFAULT_TOGGLE_BEEP)
-            .commit();
+            .apply();
 
     // Character blacklist
     prefs.edit()
             .putString(PreferencesActivity.KEY_CHARACTER_BLACKLIST,
                     OcrCharacterHelper.getDefaultBlacklist(CaptureActivity.DEFAULT_SOURCE_LANGUAGE_CODE))
-            .commit();
+            .apply();
 
     // Character whitelist
     prefs.edit()
             .putString(PreferencesActivity.KEY_CHARACTER_WHITELIST,
                     OcrCharacterHelper.getDefaultWhitelist(CaptureActivity.DEFAULT_SOURCE_LANGUAGE_CODE))
-            .commit();
+            .apply();
 
     // Page segmentation mode
     prefs.edit()
             .putString(PreferencesActivity.KEY_PAGE_SEGMENTATION_MODE, CaptureActivity.DEFAULT_PAGE_SEGMENTATION_MODE)
-            .commit();
+            .apply();
 
     // Reversed camera image
     prefs.edit()
             .putBoolean(PreferencesActivity.KEY_REVERSE_IMAGE, CaptureActivity.DEFAULT_TOGGLE_REVERSED_IMAGE)
-            .commit();
+            .apply();
 
     // Light
     prefs.edit()
             .putBoolean(PreferencesActivity.KEY_TOGGLE_LIGHT, CaptureActivity.DEFAULT_TOGGLE_LIGHT)
-            .commit();
+            .apply();
   }
 
   void displayProgressDialog() {
@@ -1475,15 +1445,113 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   /**
    * Displays an error message dialog box to the user on the UI thread.
    *
-   * @param title   The title for the dialog box
    * @param message The error message to be displayed
    */
-  void showErrorMessage(String title, String message) {
-    new AlertDialog.Builder(this).setTitle(title)
+  void showErrorMessage(String message) {
+    new AlertDialog.Builder(this).setTitle("Error")
             .setMessage(message)
             .setOnCancelListener(new FinishListener(this))
             .setPositiveButton("Done", new FinishListener(this))
             .show();
   }
+@Override
+public void onRequestPermissionsResult(int requestCode,  String permissions[], int[] grantResults) {
+    checkPermissions();
+}
+private void init() {
+
+    resetStatusView();
+
+    String previousSourceLanguageCodeOcr = sourceLanguageCodeOcr;
+    int previousOcrEngineMode = ocrEngineMode;
+
+    retrievePreferences();
+
+    //if(mKbWedge != null)
+    //  mKbWedge.onResume(); // must call this
+
+    // Set up the camera preview surface.
+    surfaceView = (SurfaceView) findViewById(R.id.preview_view);
+    surfaceHolder = surfaceView.getHolder();
+    if (!hasSurface) {
+        surfaceHolder.addCallback(this);
+        surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+    }
+
+
+    // Do OCR engine initialization, if necessary
+    boolean doNewInit = (baseApi == null) || !sourceLanguageCodeOcr.equals(previousSourceLanguageCodeOcr) ||
+            ocrEngineMode != previousOcrEngineMode;
+    if (doNewInit) {
+        // Initialize the OCR engine
+        File storageDirectory = getStorageDirectory();
+        if (storageDirectory != null) {
+            initOcrEngine(storageDirectory, sourceLanguageCodeOcr, sourceLanguageReadable);
+        }
+    } else {
+        // We already have the engine initialized, so just start the camera.
+        resumeOCR();
+    }
+}
+private void checkPermissions() {
+
+    if (!isCameraPermissionGranted()) {
+        requestForPermission(Manifest.permission.CAMERA);
+        return;
+    }
+    if (!isWriteToExternalStoragePermissionGranted()) {
+        requestForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        return;
+    }
+    init();
+}
+boolean isCameraPermissionGranted() {
+    return ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
+}
+boolean isWriteToExternalStoragePermissionGranted() {
+    return ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+}
+void requestForPermission(final String permission) {
+    if (ActivityCompat.shouldShowRequestPermissionRationale(this, permission)) {
+        MessageDialogFragment messageDialogFragment = new MessageDialogFragment();
+        messageDialogFragment.setTitle(getString(R.string.permission_request));
+        int message = R.string.app_name;
+        switch (permission) {
+            case Manifest.permission.CAMERA: {
+                message = R.string.camer_permission_message;
+                break;
+            }
+            case Manifest.permission.WRITE_EXTERNAL_STORAGE: {
+                message = R.string.write_external_storage_permission_message;
+                break;
+            }
+        }
+        messageDialogFragment.setMessage(getString(message));
+        messageDialogFragment.setPositiveButtonTitle(getString(R.string.allow));
+        messageDialogFragment.setNegativeButtonTitle(getString(R.string.deny));
+        messageDialogFragment.setListener(new MessageDialogFragment.Listener() {
+            @Override
+            public void onPositiveButtonTapped(MessageDialogFragment messageDialogFragment) {
+                requestForPermission(permission);
+            }
+            @Override
+            public void onNegativeButtonTapped(MessageDialogFragment messageDialogFragment) {}
+        });
+    }
+    else {
+        int requestCode = 0;
+        switch (permission) {
+            case Manifest.permission.CAMERA: {
+                requestCode = CAMERA_PERMISSION_REQUEST_CODE;
+                break;
+            }
+            case Manifest.permission.WRITE_EXTERNAL_STORAGE: {
+                requestCode = WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE;
+                break;
+            }
+        }
+        ActivityCompat.requestPermissions(this, new String[]{permission}, requestCode);
+    }
+}
 }
 
