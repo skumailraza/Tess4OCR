@@ -30,7 +30,10 @@ import android.graphics.Rect;
 public class OcrResult {
   private Bitmap bitmap;
   private String text;
-  
+
+
+
+  private String viewtext;
   private int[] wordConfidences;
   private int meanConfidence;
 
@@ -147,6 +150,13 @@ public class OcrResult {
   
   public long getTimestamp() {
     return timestamp;
+  }
+  public String getViewtext() {
+    return viewtext;
+  }
+
+  public void setViewtext(String viewtext) {
+    this.viewtext = viewtext;
   }
   
   public void setBitmap(Bitmap bitmap) {

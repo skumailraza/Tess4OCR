@@ -43,7 +43,8 @@ import android.widget.Toast;
 
 import com.googlecode.tesseract.android.TessBaseAPI;
 
-import java.io.DataOutputStream;
+import org.opencv.android.OpenCVLoader;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.regex.Matcher;
@@ -53,9 +54,6 @@ import edu.sfsu.cs.orange.ocr.camera.CameraManager;
 import edu.sfsu.cs.orange.ocr.camera.ShutterButton;
 import edu.sfsu.cs.orange.ocr.language.LanguageCodeHelper;
 import edu.sfsu.cs.orange.ocr.language.TranslateAsyncTask;
-
-
-import edu.sfsu.cs.orange.ocr.KBWedge;
 /**
  * This activity opens the camera and does the actual scanning on a background thread. It draws a
  * viewfinder to help the user place the text correctly, shows feedback as the image processing
@@ -63,8 +61,22 @@ import edu.sfsu.cs.orange.ocr.KBWedge;
  * <p>
  * The code for this class was adapted from the ZXing project: http://code.google.com/p/zxing/
  */
+
+
 public final class CaptureActivity extends Activity implements SurfaceHolder.Callback, ShutterButton.OnShutterButtonListener {
 
+  //added to init opencv//
+  static {
+    if(!OpenCVLoader.initDebug()) {
+      Log.d("ERROR", "Unable to load OpenCV");
+    } else {
+      Log.d("SUCCESS", "OpenCV loaded");
+    }
+  }
+static {
+  System.loadLibrary("MyOpencvLibs");
+  System.loadLibrary("MyParsingLibs");
+}
   private static final String TAG = CaptureActivity.class.getSimpleName();
 
   // Note: These constants will be overridden by any default values defined in preferences.xml.
@@ -77,7 +89,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   /**
    * ISO 639-1 language code indicating the default target language for translation.
    */
-  public static final String DEFAULT_TARGET_LANGUAGE_CODE = "es";
+  public static final String DEFAULT_TARGET_LANGUAGE_CODE = "en";
 
   /**
    * The default online machine translation service to use.
@@ -122,7 +134,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   /**
    * Whether to enable the use of online translation services be default.
    */
-  public static final boolean DEFAULT_TOGGLE_TRANSLATION = true;
+  public static final boolean DEFAULT_TOGGLE_TRANSLATION = false;
 
   /**
    * Whether the light should be initially activated by default.
@@ -162,11 +174,13 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   /**
    * Resource to use for data file downloads.
    */
-  static final String DOWNLOAD_BASE = "https://cytranet.dl.sourceforge.net/project/tesseract-ocr-alt/";
-
+  //static final String DOWNLOAD_BASE = "http://tesseract-ocr.googlecode.com/files/";
+  static final String DOWNLOAD_BASE = "https://sourceforge.net/projects/tesseract-ocr-alt/files/";
+  //https://sourceforge.net/projects/tesseract-ocr-alt/files/tesseract-ocr-3.01.osd.tar.gz/download
   /**
    * Download filename for orientation and script detection (OSD) data.
    */
+  //static final String OSD_FILENAME = "tesseract-ocr-3.01.osd.tar";
   static final String OSD_FILENAME = "tesseract-ocr-3.01.osd.tar";
 
   /**
@@ -256,7 +270,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     mKbWedge = new KBWedge((UsbManager) getSystemService(Context.USB_SERVICE),this, ACTION_USB_PERMISSION);
 
 
-      mKbWedge.Open();
+    mKbWedge.Open();
 
     Window window = getWindow();
     window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -368,6 +382,9 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     isEngineReady = false;
   }
 
+
+
+
   @Override
   protected void onResume() {
     super.onResume();
@@ -424,7 +441,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     }
     if (baseApi != null) {
       baseApi.setPageSegMode(pageSegmentationMode);
-      baseApi.setVariable(TessBaseAPI.VAR_CHAR_BLACKLIST, characterBlacklist);
+      //baseApi.setVariable(TessBaseAPI.VAR_CHAR_BLACKLIST, characterBlacklist);
+      baseApi.setVariable(TessBaseAPI.VAR_CHAR_BLACKLIST, "_.,/~`\"\'?!;+*%$");
       baseApi.setVariable(TessBaseAPI.VAR_CHAR_WHITELIST, characterWhitelist);
     }
 
@@ -781,13 +799,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
    * @return True if a non-null result was received for OCR
    */
   boolean handleOcrDecode(OcrResult ocrResult) {
-
-//    String Result1 = ocrResult.toString();
-//    Result1.replaceAll("\n\n", "\n");
-      lastResult = ocrResult;
-    //lastResult.setText(Result1);
-//    ocrResult.setText(Result1);
-
+    lastResult = ocrResult;
 
     // Test whether the result is null
     if (ocrResult.getText() == null || ocrResult.getText()
@@ -818,17 +830,17 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     TextView sourceLanguageTextView = (TextView) findViewById(R.id.source_language_text_view);
     sourceLanguageTextView.setText(sourceLanguageReadable);
     TextView ocrResultTextView = (TextView) findViewById(R.id.ocr_result_text_view);
-    ocrResultTextView.setText(ocrResult.getText());
+    //changing for text view
+    ocrResultTextView.setText(ocrResult.getViewtext());
     // Crudely scale betweeen 22 and 32 -- bigger font for shorter text
     int scaledSize = Math.max(22, 32 - ocrResult.getText()
             .length() / 4);
     ocrResultTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, scaledSize);
 
-
     TextView translationLanguageLabelTextView = (TextView) findViewById(R.id.translation_language_label_text_view);
     TextView translationLanguageTextView = (TextView) findViewById(R.id.translation_language_text_view);
     TextView translationTextView = (TextView) findViewById(R.id.translation_text_view);
-    if (!isTranslationActive) {
+    if (isTranslationActive) {
       // Handle translation text fields
       translationLanguageLabelTextView.setVisibility(View.VISIBLE);
       translationLanguageTextView.setText(targetLanguageReadable);
@@ -853,6 +865,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       //Here is the hook----->
 
       try {
+        Log.d("DEBUG", "I TRIED!");
         //Process su = Runtime.getRuntime()
         //        .exec("su");
         //DataOutputStream outputStream = new DataOutputStream(su.getOutputStream());
@@ -881,41 +894,45 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         // first line: name
         // everything in between: address
         // last line: city + state + zip
-
+        String Result = "";
+        
         String[] lines = ocrResult.getText().split("\n");
+        for(int i=0;i<lines.length;i++)Log.d("output:",lines[i]);
         String name = lines[0];
         String cityStateZip = lines[lines.length - 1];
+        int addressLinesIndex=1;
+        if(lines.length==9){
+          mKbWedge.Write(name);
+          mKbWedge.Write("\t");
+          mKbWedge.Write(lines[1]);
+          addressLinesIndex = 2;
+          Result +=name + "<TAB>" + lines[1];
+        }
+        else {
+          mKbWedge.Write("\t"); //Attention/Company
+          mKbWedge.Write(name);
+          Result+="<TAB>"+name;
+        }
 
-        // skip the attention field
-        //writeText(outputStream, ".");
-        //writeText(outputStream, "\t");
         mKbWedge.Write("\t");
-
-        // write the first line: name
-        //writeText(outputStream, name);
-        //writeText(outputStream, "\t");
-        mKbWedge.Write(name);
-        mKbWedge.Write("\t");
-
+        Result += "<TAB>";
         // write at most 3 address lines
         int addressLineCount = 0;
-        //for (int i = 1; i < lines.length - 1 && addressLineCount < 3; ++i) {
-        for (int i = 0; i < lines.length - 1 && addressLineCount < 4; ++i) {
+        for (int i = addressLinesIndex; i < lines.length && addressLineCount < 8; ++i) {
+           Log.d("indexes:",Integer.toString(i));
+          Log.d("adl:",Integer.toString(addressLineCount));
 
-          //writeText(outputStream, lines[i]);
-          //writeText(outputStream, "\t");
           mKbWedge.Write(lines[i]);
-          Log.i("out", "lines[i]");
-          Log.i("out","<tab>");
           mKbWedge.Write("\t");
-
+          Result += lines[i] +"<TAB>";
           addressLineCount++;
+          Log.d("kbwedge",lines[i]);
         }
         // if less than 3 address lines were written, write tabs for the missed
-        for (int i = addressLineCount; i < 4; ++i) {
+        for (int i = addressLineCount; i < 8; ++i) {
           //writeText(outputStream, "\t");
-          Log.i("out","<tab>");
           mKbWedge.Write("\t");
+          Result += "<TAB>";
         }
 
         // try to match last line against city+state+zip pattern
@@ -932,7 +949,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 
           mKbWedge.Write(matcher.group(1).replaceAll(",", ""));
           mKbWedge.Write("\t");
-
           // extract and write state
           //writeText(outputStream, matcher.group(2));
           //writeText(outputStream, "\t");
@@ -944,30 +960,15 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
           //writeText(outputStream, "\t");
           mKbWedge.Write(matcher.group(3));
           mKbWedge.Write("\t");
+
+          Result += matcher.group(1).replaceAll(",", "") + "<TAB>" + matcher.group(2) + "<TAB>" + matcher.group(3) + "<TAB>";
         }
-
-        //outputStream.writeBytes("echo a | ./hid-gadget-test /dev/hidg0 keyboard\n");
-        //outputStream.flush();
-
-        //outputStream.writeBytes("exit\n");
-        //outputStream.flush();
-        //str = null;
-        //su.waitFor();
-
-
-        //} catch (IOException e) {
-        //e.printStackTrace();
-        //} catch (InterruptedException e) {
-        //e.printStackTrace();
-        //}
-        //}
-        //return true;
+        //System.out.println(Result);
       } catch (Exception e) {
         e.printStackTrace();
-     // } catch (Exception e) {
-     //   e.printStackTrace();
       }
     }
+
     return true;
   }
   //void writeText(DataOutputStream outputStream, String str) throws IOException, InterruptedException {
@@ -992,8 +993,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   //       case '\n':
   //          cmd = "enter";
   //          break;
-   //       case '.':
-   //         cmd = "stop";
+  //       case '.':
+  //         cmd = "stop";
   //          break;
   //        case '-':
   //          cmd = "dash";
@@ -1009,10 +1010,10 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   //    outputStream.writeBytes("echo " + cmd + " | ./hid-gadget-test /dev/hidg0 keyboard\n");
 
   //    Thread.sleep(20);
-   // }
+  // }
   //}
-   // Displays information relating to the results of a successful real-time OCR request.
-   //@param ocrResult Object representing successful OCR results
+  // Displays information relating to the results of a successful real-time OCR request.
+  //@param ocrResult Object representing successful OCR results
 
   void handleOcrContinuousDecode(OcrResult ocrResult) {
 
@@ -1321,7 +1322,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     setTargetLanguage(prefs.getString(PreferencesActivity.KEY_TARGET_LANGUAGE_PREFERENCE,
             CaptureActivity.DEFAULT_TARGET_LANGUAGE_CODE));
     isTranslationActive = prefs.getBoolean(PreferencesActivity.KEY_TOGGLE_TRANSLATION, false);
-    Log.d("translation", " "+ isTranslationActive);
 
     // Retrieve from preferences, and set in this Activity, the capture mode preference
     if (prefs.getBoolean(PreferencesActivity.KEY_CONTINUOUS_PREVIEW, CaptureActivity.DEFAULT_TOGGLE_CONTINUOUS)) {

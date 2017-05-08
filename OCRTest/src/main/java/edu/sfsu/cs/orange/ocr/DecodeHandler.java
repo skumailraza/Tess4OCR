@@ -31,6 +31,9 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 
+import org.opencv.android.Utils;
+import org.opencv.core.Mat;
+
 /**
  * Class to send bitmap data for OCR.
  * 
@@ -144,7 +147,13 @@ final class DecodeHandler extends Handler {
     String textResult;
     long start = System.currentTimeMillis();
 
-    try {     
+    try {
+      //Mat image = new Mat();
+      //Utils.bitmapToMat(bitmap,image);
+      //Mat gray = new Mat();
+      //Utils.bitmapToMat(bitmap,gray);
+      //OpencvNativeClass.BinarizeShafait(gray.getNativeObjAddr(),image.getNativeObjAddr());
+      //Utils.matToBitmap(image,bitmap);
       baseApi.setImage(ReadFile.readBitmap(bitmap));
       textResult = baseApi.getUTF8Text();
       timeRequired = System.currentTimeMillis() - start;
@@ -200,7 +209,7 @@ final class DecodeHandler extends Handler {
     return ocrResult;
   }
   
-  private void sendContinuousOcrFailMessage() {
+  private void sendContinuousOcrFailMessage(){
     Handler handler = activity.getHandler();
     if (handler != null) {
       Message message = Message.obtain(handler, R.id.ocr_continuous_decode_failed, new OcrResultFailure(timeRequired));
