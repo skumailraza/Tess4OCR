@@ -6,8 +6,6 @@ import android.widget.Toast;
 
 import tw.com.prolific.driver.pl2303.PL2303Driver;
 
-import edu.sfsu.cs.orange.ocr.CaptureActivity;
-
 
 public class KBWedge
 {
@@ -26,7 +24,7 @@ public class KBWedge
     private void SetStatus(String msg)
     {
         StatusMessage = "KBWedge: " + msg;
-        Toast.makeText(mContext, StatusMessage, Toast.LENGTH_SHORT);
+        Toast.makeText(mContext, StatusMessage, Toast.LENGTH_SHORT).show();
     }
 
     public KBWedge(UsbManager manager, Context mContext, String sAppName)

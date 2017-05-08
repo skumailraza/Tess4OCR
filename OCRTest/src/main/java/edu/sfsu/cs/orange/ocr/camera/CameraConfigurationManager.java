@@ -27,13 +27,13 @@ import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 
-import edu.sfsu.cs.orange.ocr.PreferencesActivity;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
+import edu.sfsu.cs.orange.ocr.PreferencesActivity;
 
 /**
  * A class which deals with reading, parsing, and setting the camera parameters which are used to
@@ -135,7 +135,7 @@ final class CameraConfigurationManager {
     if (currentSetting != newSetting) {
       SharedPreferences.Editor editor = prefs.edit();
       editor.putBoolean(PreferencesActivity.KEY_TOGGLE_LIGHT, newSetting);
-      editor.commit();
+      editor.apply();
     }
   }
 

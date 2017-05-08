@@ -17,4 +17,13 @@
  -->
 <resources>
     <string name="app_name">SendSuite OCR</string>
+    <string name="ocr">OCR</string>
+    <string name="translation">Translation</string>
+    <string name="target_language">[Target language]</string>
+    <string name="done">Done</string>
+    <string name="permission_request">Permission required</string>
+    <string name="camer_permission_message">Allow camera access to capture address image.</string>
+    <string name="write_external_storage_permission_message">Allow external storage to save captured images</string>
+    <string name="allow">Allow</string>
+    <string name="deny">Deny</string>
 </resources>
