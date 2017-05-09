@@ -74,3 +74,7 @@ Thumbs.db
 
 OCRTest/build/
 openCVLibrary310/build/
+
+tess-two/build
+tess-two/obj
+
