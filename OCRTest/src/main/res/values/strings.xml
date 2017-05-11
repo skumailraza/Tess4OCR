@@ -26,4 +26,5 @@
     <string name="write_external_storage_permission_message">Allow external storage to save captured images</string>
     <string name="allow">Allow</string>
     <string name="deny">Deny</string>
+    <string name="settings">Settings</string>
 </resources>

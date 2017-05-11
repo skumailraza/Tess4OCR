@@ -390,6 +390,12 @@ static {
     });
 
     isEngineReady = false;
+    findViewById(R.id.settingsButton).setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            startActivity(new Intent().setClass(CaptureActivity.this, PreferencesActivity.class));
+        }
+    });
   }
 
 
