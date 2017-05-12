@@ -17,4 +17,5 @@
  -->
 <resources>
     <string name="app_name">SendSuite OCR</string>
+    <string name="settings">Settings</string>
 </resources>

@@ -202,23 +202,31 @@
               android:textSize="14sp"
               android:autoLink="web"   
               android:clickable="true" />
-     
-     <!-- 
-     <ToggleButton android:id="@+id/torch_button"
-		      android:layout_width="wrap_content" 
-		      android:layout_height="wrap_content"
-		      android:background="@drawable/torch_button"
-		      android:clickable="true" 
-		      android:focusable="true"
-		      android:textOff=""
-		      android:textOn=""
-		      android:layout_alignParentRight="true" 
-		      android:layout_alignParentBottom="true"
-		      android:layout_marginRight="8dip" 
-		      android:layout_marginBottom="8dip"
-		      android:scaleType="center" />
-     -->
+
+
+
+    <!--
+    <ToggleButton android:id="@+id/torch_button"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/torch_button"
+             android:clickable="true"
+             android:focusable="true"
+             android:textOff=""
+             android:textOn=""
+             android:layout_alignParentRight="true"
+             android:layout_alignParentBottom="true"
+             android:layout_marginRight="8dip"
+             android:layout_marginBottom="8dip"
+             android:scaleType="center" />
+    -->
      
   </RelativeLayout>
+
+  <Button
+      android:id="@+id/settingsButton"
+      android:layout_width="123dp"
+      android:layout_height="wrap_content"
+      android:text="@string/settings" />
 
 </FrameLayout>
