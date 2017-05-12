@@ -92,6 +92,10 @@
             android:key="preferences_reverse_image"
             android:title="Reversed camera image"
             android:summary="(For devices with only a front camera)"/>
+		<CheckBoxPreference
+			android:key="preference_preprocessing"
+			android:title="Enable preprocessing"
+			android:summary="For enabling pre processing"/>
 	    
 	</PreferenceCategory>
 	

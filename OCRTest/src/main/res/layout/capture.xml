@@ -2,13 +2,10 @@
 <!--
  Copyright (C) 2008 ZXing authors
  Copyright 2011 Robert Theis
-
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
-
       http://www.apache.org/licenses/LICENSE-2.0
-
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,14 +13,14 @@
  limitations under the License.
  -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="fill_parent"
-             android:layout_height="fill_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
   <SurfaceView android:id="@+id/preview_view"
-               android:layout_width="fill_parent"
-               android:layout_height="fill_parent"
-               android:layout_centerInParent="true"/>
-     
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_centerInParent="true"/>
+
   <edu.sfsu.cs.orange.ocr.ViewfinderView
       android:id="@+id/viewfinder_view"
       android:layout_width="fill_parent"
@@ -31,12 +28,12 @@
       android:background="#0000"/>
 
   <LinearLayout android:id="@+id/result_view"
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:background="@color/result_view"
-                android:visibility="gone"
-                android:padding="4dip">
+      android:orientation="vertical"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:background="@color/result_view"
+      android:visibility="gone"
+      android:padding="4dip">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -55,60 +52,60 @@
         <ImageView
             android:contentDescription="@string/app_name"
             android:id="@+id/image_view"
-                   android:layout_width="160dip"
-                   android:layout_height="wrap_content"
-                   android:maxWidth="160dip"
-                   android:maxHeight="160dip"
-                   android:layout_marginBottom="4dip"
-                   android:adjustViewBounds="true"
-                   android:scaleType="centerInside"/>
+            android:layout_width="160dip"
+            android:layout_height="wrap_content"
+            android:maxWidth="160dip"
+            android:maxHeight="160dip"
+            android:layout_marginBottom="4dip"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"/>
 
         <LinearLayout
-          android:orientation="horizontal"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
           <TextView android:id="@+id/source_language_text_view_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ocr"
-                    android:textColor="@color/result_minor_text"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:typeface="sans"
-                    android:paddingRight="4dip"/>
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/ocr"
+              android:textColor="@color/result_minor_text"
+              android:textStyle="bold"
+              android:textSize="14sp"
+              android:typeface="sans"
+              android:paddingRight="4dip"/>
 
           <TextView android:id="@+id/source_language_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/result_minor_text"
-                    android:textSize="14sp"
-                    android:typeface="sans" />
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/result_minor_text"
+              android:textSize="14sp"
+              android:typeface="sans" />
 
         </LinearLayout>
 
         <LinearLayout
-          android:orientation="horizontal"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
           <TextView android:id="@+id/translation_language_label_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/translation"
-                    android:textColor="@color/translation_text"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:typeface="sans"
-                    android:paddingRight="4dip"/>
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/translation"
+              android:textColor="@color/translation_text"
+              android:textStyle="bold"
+              android:textSize="14sp"
+              android:typeface="sans"
+              android:paddingRight="4dip"/>
 
           <TextView android:id="@+id/translation_language_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/translation_text"
-                    android:textSize="14sp"
-                    android:typeface="sans"
-                    android:text="@string/target_language"/>
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/translation_text"
+              android:textSize="14sp"
+              android:typeface="sans"
+              android:text="@string/target_language"/>
 
         </LinearLayout>
 
@@ -119,44 +116,44 @@
           android:layout_height="wrap_content">
 
         <LinearLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="vertical">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
           <TextView android:id="@+id/ocr_result_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/result_text"
-                    android:textColorLink="@color/result_text"
-                    android:textSize="22sp"
-                    android:typeface="sans"
-                    android:paddingLeft="12dip"
-                    android:autoLink="web"/>
-        
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/result_text"
+              android:textColorLink="@color/result_text"
+              android:textSize="22sp"
+              android:typeface="sans"
+              android:paddingLeft="12dip"
+              android:autoLink="web"/>
+
           <TextView android:id="@+id/translation_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/translation_text"
-                    android:textColorLink="@color/translation_text"
-                    android:textSize="22sp"
-                    android:paddingLeft="12dip"
-                    android:autoLink="web"
-                    android:clickable="true"/>
-           
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/translation_text"
+              android:textColorLink="@color/translation_text"
+              android:textSize="22sp"
+              android:paddingLeft="12dip"
+              android:autoLink="web"
+              android:clickable="true"/>
+
           <LinearLayout android:id="@+id/indeterminate_progress_indicator_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        >
-            
-              <ProgressBar android:id="@+id/progress_small"
-		                   style="?android:attr/progressBarStyleSmall" 
-		                   android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:paddingLeft="12dip" 
-                           android:paddingTop="10dip"/>
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              >
+
+            <ProgressBar android:id="@+id/progress_small"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dip"
+                android:paddingTop="10dip"/>
           </LinearLayout>
-          
-          
+
+
         </LinearLayout>
 
       </ScrollView>
@@ -166,61 +163,70 @@
   </LinearLayout>
 
   <RelativeLayout android:id="@+id/camera_button_view"
-           android:layout_width="fill_parent"
-           android:layout_height="fill_parent">
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent">
 
     <TextView android:id="@+id/status_view_top"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"    
-              android:layout_alignParentTop="true"
-              android:background="#0000"
-              android:text=""
-              android:textColor="@color/status_text"
-              android:textSize="14sp"
-              android:autoLink="web"
-              android:clickable="true" />
- 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#0000"
+        android:text=""
+        android:textColor="@color/status_text"
+        android:textSize="14sp"
+        android:autoLink="web"
+        android:clickable="true" />
+
     <edu.sfsu.cs.orange.ocr.camera.ShutterButton
-              android:id="@+id/shutter_button"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:background="@drawable/shutter_button"
-              android:clickable="true"
-              android:focusable="true"
-              android:layout_alignParentRight="true"
-              android:gravity="center_vertical"
-              android:layout_marginRight="8dip"
-              android:layout_marginTop="8dip"
-              android:scaleType="center"
-              android:visibility="gone" /> 
-     
+        android:id="@+id/shutter_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shutter_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:layout_marginRight="8dip"
+        android:layout_marginTop="8dip"
+        android:scaleType="center"
+        android:visibility="gone" />
+
     <TextView android:id="@+id/status_view_bottom"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_alignParentBottom="true"
-              android:background="#0000"
-              android:text=""
-              android:textColor="@color/status_text"
-              android:textSize="14sp"
-              android:autoLink="web"   
-              android:clickable="true" />
-     
-     <!-- 
-     <ToggleButton android:id="@+id/torch_button"
-		      android:layout_width="wrap_content" 
-		      android:layout_height="wrap_content"
-		      android:background="@drawable/torch_button"
-		      android:clickable="true" 
-		      android:focusable="true"
-		      android:textOff=""
-		      android:textOn=""
-		      android:layout_alignParentRight="true" 
-		      android:layout_alignParentBottom="true"
-		      android:layout_marginRight="8dip" 
-		      android:layout_marginBottom="8dip"
-		      android:scaleType="center" />
-     -->
-     
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#0000"
+        android:text=""
+        android:textColor="@color/status_text"
+        android:textSize="14sp"
+        android:autoLink="web"
+        android:clickable="true" />
+
+    <!--
+    <ToggleButton android:id="@+id/torch_button"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/torch_button"
+             android:clickable="true"
+             android:focusable="true"
+             android:textOff=""
+             android:textOn=""
+             android:layout_alignParentRight="true"
+             android:layout_alignParentBottom="true"
+             android:layout_marginRight="8dip"
+             android:layout_marginBottom="8dip"
+             android:scaleType="center" />
+    -->
+
   </RelativeLayout>
+
+
+  <ImageButton
+      android:id="@+id/settingsButton"
+      android:layout_width="103dp"
+      android:layout_height="104dp"
+      android:background="@android:color/transparent"
+      android:backgroundTint="@android:color/transparent"
+      android:src="@android:drawable/ic_menu_preferences" />
 
 </FrameLayout>
