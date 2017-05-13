@@ -18,6 +18,7 @@ package edu.sfsu.cs.orange.ocr;
 import java.io.File;
 import java.util.ArrayList;
 
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.ImageFormat;
 import android.graphics.Rect;
@@ -25,6 +26,7 @@ import android.os.AsyncTask;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.googlecode.leptonica.android.ReadFile;
@@ -33,20 +35,29 @@ import com.googlecode.tesseract.android.TessBaseAPI;
 import com.googlecode.tesseract.android.TessBaseAPI.PageIteratorLevel;
 
 import org.opencv.android.Utils;
+import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.core.Size;
 import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
 import org.opencv.utils.*;
 import com.googlecode.leptonica.android.*;
+
+import static java.lang.Math.max;
+import static org.opencv.imgproc.Imgproc.INTER_LANCZOS4;
+
 /**
  * Class to send OCR requests to the OCR engine in a separate thread, send a success/failure message,
  * and dismiss the indeterminate progress dialog box. Used for non-continuous mode OCR only.
  */
 final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
 
-  //  private static final boolean PERFORM_FISHER_THRESHOLDING = false; 
-  //  private static final boolean PERFORM_OTSU_THRESHOLDING = false; 
-  //  private static final boolean PERFORM_SOBEL_THRESHOLDING = false; 
+  //  private static final boolean PERFORM_FISHER_THRESHOLDING = false;
+  //  private static final boolean PERFORM_OTSU_THRESHOLDING = false;
+  //  private static final boolean PERFORM_SOBEL_THRESHOLDING = false;
+
+  public static final boolean DEFAULT_TOGGLE_PREPROCESS = false;
 
   private CaptureActivity activity;
   private TessBaseAPI baseApi;
@@ -55,6 +66,7 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
   private int height;
   private OcrResult ocrResult;
   private long timeRequired;
+  public boolean isPreprocessingActive;
 
   OcrRecognizeAsyncTask(CaptureActivity activity, TessBaseAPI baseApi, byte[] data, int width, int height) {
     this.activity = activity;
@@ -70,46 +82,79 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
     Bitmap bitmap = activity.getCameraManager().buildLuminanceSource(data, width, height).renderCroppedGreyscaleBitmap();
 
     String textResult;
-    Mat image = new Mat();
-    Utils.bitmapToMat(bitmap,image);
-    Mat gray = new Mat();
-    Utils.bitmapToMat(bitmap,gray);
 
-    Mat background = new Mat();
-    Utils.bitmapToMat(bitmap,background);   //to test with BinarizeBG
-    Mat finalimage = new Mat();
-    Utils.bitmapToMat(bitmap,finalimage);
-
-    //image.convertTo( gray,CvType.CV_8UC1);
-    //image.convertTo(image,CvType.CV_64F);
     try {
-      Imgcodecs.imwrite("/storage/emulated/0/DCIM/orig.jpg",image);
-      OpencvNativeClass.BinarizeShafait(gray.getNativeObjAddr(),image.getNativeObjAddr());
+      //Imgcodecs.imwrite("/storage/emulated/0/DCIM/orig.jpg",image);
+      //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences();
+      //isPreprocessingActive = prefs.getBoolean(PreferencesActivity.KEY_PREPROCESSING, OcrRecognizeAsyncTask.DEFAULT_TOGGLE_PREPROCESS);
+      isPreprocessingActive = activity.getPreprocessingFlag();
+      if(isPreprocessingActive) {
+        //Mat image = new Mat();
+        //Utils.bitmapToMat(bitmap,image);
+        Mat gray = new Mat();
+        Utils.bitmapToMat(bitmap, gray);
+        Imgproc.cvtColor(gray, gray, Imgproc.COLOR_BGR2GRAY);
+        //Utils.matToBitmap(gray,bitmap);
+
+        /** Code to Resize **/
+//
+//    int m_LargerDim = 2000;
+//
+//    int maxDim = max(gray.cols(), gray.rows());
+//    Mat rescaledImg;
+//    int orows = gray.rows();
+//    int ocols = gray.cols();
+//    double scale = m_LargerDim / maxDim;
+//    Imgproc.resize(gray, gray, Size, scale, scale, INTER_LANCZOS4);
+//    Imgproc.resize();
+
+        /********************/
+
+        Mat background = new Mat();
+        //Utils.bitmapToMat(bitmap,background);   //to test with BinarizeBG
+        Mat finalimage = new Mat();
+        //Utils.bitmapToMat(bitmap,finalimage);
+//
+//    finalimage.convertTo(finalimage,CvType.CV_8UC1);
+//    background.convertTo(background, CvType.CV_8UC1);
+        //OpencvNativeClass.BinarizeShafait(gray.getNativeObjAddr(),image.getNativeObjAddr());
+        OpencvNativeClass.BinarizeBG(background.getNativeObjAddr(), gray.getNativeObjAddr(), finalimage.getNativeObjAddr());
+//        Imgcodecs.imwrite("/storage/emulated/0/DCIM/original.jpg", gray);
+//        Imgcodecs.imwrite("/storage/emulated/0/DCIM/binarized.jpg", finalimage);
+//        Imgcodecs.imwrite("/storage/emulated/0/DCIM/background.jpg", background);
+
+        Utils.matToBitmap(finalimage, bitmap);
+
+        //Pix fimage = ReadFile.readBitmap(bitmap);
+        //fimage = Binarize.otsuAdaptiveThreshold(fimage);
 
 
-      Imgcodecs.imwrite("/storage/emulated/0/DCIM/binarized.jpg",image);
-      Utils.matToBitmap(image,bitmap);
+        //float angle = Skew.findSkew(fimage);
+        //Log.i("Skew: ", Float.toString(angle));
+        //double deg2rad = 3.14159265 / 180.;
 
-      //Pix fimage = ReadFile.readBitmap(bitmap);
-      //fimage = Binarize.otsuAdaptiveThreshold(fimage);
+        //fimage = Rotate.rotate(fimage, angle);
 
-      //float angle = Skew.findSkew(fimage);
-      //Log.i("Skew: ", Float.toString(angle));
-      //double deg2rad = 3.14159265 / 180.;
+        //bitmap = WriteFile.writeBitmap(fimage);
 
-      //fimage = Rotate.rotate(fimage, angle);
+        //Mat skewed = new Mat();
 
-      //bitmap = WriteFile.writeBitmap(fimage);
+        //Utils.bitmapToMat(bitmap,skewed);
+        //Imgcodecs.imwrite("/storage/emulated/0/DCIM/deskewed.jpg", skewed);
+        //
+        //double deg2rad = 3.14159265 / 180.0;
+        //float fdeg2rad = (float)deg2rad;
+        //angle=angle*fdeg2rad;
+        //Log.i("Skew:(in degrees) ", Float.toString(angle));
+        //fimage = Rotate.rotate(fimage, angle, true);
+        //bitmap = WriteFile.writeBitmap(fimage);
 
-      Mat skewed = new Mat();
-
-      //Utils.bitmapToMat(bitmap,skewed);
-      //Imgcodecs.imwrite("/storage/emulated/0/DCIM/deskewed.jpg", skewed);
+      }
 
       baseApi.setImage(ReadFile.readBitmap(bitmap));
-
-
       textResult = baseApi.getUTF8Text();
+
+
       timeRequired = System.currentTimeMillis() - start;
 
       // Check for failure to recognize text
@@ -131,10 +176,10 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
       ArrayList<Rect> charBoxes = new ArrayList<Rect>();
       iterator.begin();
       do {
-          lastBoundingBox = iterator.getBoundingBox(PageIteratorLevel.RIL_SYMBOL);
-          Rect lastRectBox = new Rect(lastBoundingBox[0], lastBoundingBox[1],
-                  lastBoundingBox[2], lastBoundingBox[3]);
-          charBoxes.add(lastRectBox);
+        lastBoundingBox = iterator.getBoundingBox(PageIteratorLevel.RIL_SYMBOL);
+        Rect lastRectBox = new Rect(lastBoundingBox[0], lastBoundingBox[1],
+                lastBoundingBox[2], lastBoundingBox[3]);
+        charBoxes.add(lastRectBox);
       } while (iterator.next(PageIteratorLevel.RIL_SYMBOL));
       iterator.delete();
       ocrResult.setCharacterBoundingBoxes(charBoxes);
@@ -165,10 +210,10 @@ final class OcrRecognizeAsyncTask extends AsyncTask<Void, Void, Boolean> {
           textResult = textResult + temp[i];
       }
     }
-    String textResult2=ParsingNativeClass.ParseAddress(textResult);
-    Log.d("Return parsing",textResult2);
+//    String textResult2=ParsingNativeClass.ParseAddress(textResult);
+//    Log.d("Return parsing",textResult2);
     ocrResult.setViewtext(textResult);
-    ocrResult.setText(textResult2);
+    ocrResult.setText(textResult);
     ocrResult.setRecognitionTimeRequired(timeRequired);
     return true;
   }

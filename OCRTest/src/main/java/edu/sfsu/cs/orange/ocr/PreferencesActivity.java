@@ -19,6 +19,7 @@ package edu.sfsu.cs.orange.ocr;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.PreferenceActivity;
@@ -49,6 +50,7 @@ public class PreferencesActivity extends PreferenceActivity implements
   public static final String KEY_CHARACTER_WHITELIST = "preference_character_whitelist";
   public static final String KEY_TOGGLE_LIGHT = "preference_toggle_light";
   public static final String KEY_TRANSLATOR = "preference_translator";
+
   
   // Preference keys carried over from ZXing project
   public static final String KEY_AUTO_FOCUS = "preferences_auto_focus";
@@ -58,6 +60,7 @@ public class PreferencesActivity extends PreferenceActivity implements
   public static final String KEY_REVERSE_IMAGE = "preferences_reverse_image";
   public static final String KEY_PLAY_BEEP = "preferences_play_beep";
   public static final String KEY_VIBRATE = "preferences_vibrate";
+  public static final String KEY_ENABLE_PREPROCESSING = "preference_preprocessing";
 
   public static final String TRANSLATOR_BING = "Bing Translator";
   public static final String TRANSLATOR_GOOGLE = "Google Translate";
@@ -69,6 +72,7 @@ public class PreferencesActivity extends PreferenceActivity implements
   private EditTextPreference editTextPreferenceCharacterBlacklist;
   private EditTextPreference editTextPreferenceCharacterWhitelist;
   private ListPreference listPreferencePageSegmentationMode;
+  private CheckBoxPreference preprocessingPreference;
   
   private static SharedPreferences sharedPreferences;
   
@@ -93,7 +97,7 @@ public class PreferencesActivity extends PreferenceActivity implements
     editTextPreferenceCharacterBlacklist = (EditTextPreference) getPreferenceScreen().findPreference(KEY_CHARACTER_BLACKLIST);
     editTextPreferenceCharacterWhitelist = (EditTextPreference) getPreferenceScreen().findPreference(KEY_CHARACTER_WHITELIST);
     listPreferencePageSegmentationMode = (ListPreference) getPreferenceScreen().findPreference(KEY_PAGE_SEGMENTATION_MODE);
-    
+    preprocessingPreference = (CheckBoxPreference) getPreferenceScreen().findPreference(KEY_ENABLE_PREPROCESSING);
     // Create the entries/entryvalues for the translation target language list.
     initTranslationTargetList();
     

@@ -345,39 +345,72 @@ double CBgEstimate::binarizeOtsu(Mat &gray, Mat &binary){
 }
 
 
+//void CBgEstimate::bgEstimatePercentile(Mat &img, Mat &outimg) {
+//
+//    int r = m_perc_w >> 1;
+//    int M;
+//    int pixelCount;
+//    int nRows = img.rows;
+//    int nCols = img.cols;
+//    if(!m_ignore_border){
+//        for (int x=0; x<nCols; x++) {
+//            for (int y=0;y<nRows; y++) {
+//                if(y<r || y>=nRows-r){
+//                    int xmin = max(0, x-r);
+//                    int xmax = min(nCols-1, x+r);
+//                    int ymin = max(0, y-r);
+//                    int ymax = min(nRows-1, y+r);
+//                    CHistogram hist(img, xmin, xmax, ymin, ymax, 256);
+//                    pixelCount = (xmax-xmin)*(ymax-ymin);
+//                    M = backgroundFromHisto(hist, pixelCount);
+//                    outimg.at<uchar>(y,x) = M;
+//                }
+//            }
+//        }
+//    }
+//    for (int y=r;y<nRows-r; y++) {
+//        CHistogram hist(img, 0, r, y-r, y+r, 256);
+//        pixelCount = (r+1)*(2*r+1);
+//        for (int x=0; x<nCols; x++) {
+//            M = backgroundFromHisto(hist, pixelCount);
+//            outimg.at<uchar>(y,x) = M;
+//            // remove old column from the histogram
+//            if (x>=r) {
+//                for (int dy=-r; dy<=r; dy++) {
+//                    hist[ img.at<uchar>(y+dy, x-r) ]--;
+//                    pixelCount--;
+//                }
+//            }
+//
+//            // add new column to the histogram
+//            if (x<nCols-r-1) {
+//                for (int dy=-r; dy<=r; dy++) {
+//                    hist[ img.at<uchar>(y+dy, x+r+1) ]++;
+//                    pixelCount++;
+//                }
+//            }
+//        }
+//    }
+//}
 void CBgEstimate::bgEstimatePercentile(Mat &img, Mat &outimg) {
-
     int r = m_perc_w >> 1;
     int M;
     int pixelCount;
-    int nRows = img.rows;
-    int nCols = img.cols;
-    if(!m_ignore_border){
-        for (int x=0; x<nCols; x++) {
-            for (int y=0;y<nRows; y++) {
-                if(y<r || y>=nRows-r){
-                    int xmin = max(0, x-r);
-                    int xmax = min(nCols-1, x+r);
-                    int ymin = max(0, y-r);
-                    int ymax = min(nRows-1, y+r);
-                    CHistogram hist(img, xmin, xmax, ymin, ymax, 256);
-                    pixelCount = (xmax-xmin)*(ymax-ymin);
-                    M = backgroundFromHisto(hist, pixelCount);
-                    outimg.at<uchar>(y,x) = M;
-                }
-            }
-        }
-    }
+    Mat imgPadded;
+    copyMakeBorder(img, imgPadded, r, r, r, r, BORDER_REFLECT_101);
+    int nRows = imgPadded.rows;
+    int nCols = imgPadded.cols;
+    Mat outimgPadded = imgPadded.clone();
     for (int y=r;y<nRows-r; y++) {
-        CHistogram hist(img, 0, r, y-r, y+r, 256);
+        CHistogram hist(imgPadded, 0, r, y-r, y+r, 256);
         pixelCount = (r+1)*(2*r+1);
         for (int x=0; x<nCols; x++) {
             M = backgroundFromHisto(hist, pixelCount);
-            outimg.at<uchar>(y,x) = M;
+            outimgPadded.at<uchar>(y,x) = M;
             // remove old column from the histogram
             if (x>=r) {
                 for (int dy=-r; dy<=r; dy++) {
-                    hist[ img.at<uchar>(y+dy, x-r) ]--;
+                    hist[ imgPadded.at<uchar>(y+dy, x-r) ]--;
                     pixelCount--;
                 }
             }
@@ -385,14 +418,15 @@ void CBgEstimate::bgEstimatePercentile(Mat &img, Mat &outimg) {
             // add new column to the histogram
             if (x<nCols-r-1) {
                 for (int dy=-r; dy<=r; dy++) {
-                    hist[ img.at<uchar>(y+dy, x+r+1) ]++;
+                    hist[ imgPadded.at<uchar>(y+dy, x+r+1) ]++;
                     pixelCount++;
                 }
             }
         }
     }
+    Rect ROI(r, r, img.cols, img.rows);
+    outimg = outimgPadded(ROI).clone();
 }
-
 
 JNIEXPORT void JNICALL Java_edu_sfsu_cs_orange_ocr_OpencvNativeClass_BinarizeBG
 (JNIEnv *, jclass, jlong BG, jlong input, jlong output)

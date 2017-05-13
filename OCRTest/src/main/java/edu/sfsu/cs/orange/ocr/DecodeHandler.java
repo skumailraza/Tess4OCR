@@ -33,6 +33,8 @@ import android.util.Log;
 
 import org.opencv.android.Utils;
 import org.opencv.core.Mat;
+import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
 
 /**
  * Class to send bitmap data for OCR.
@@ -48,6 +50,7 @@ final class DecodeHandler extends Handler {
   private Bitmap bitmap;
   private static boolean isDecodePending;
   private long timeRequired;
+  private boolean isPreprocessingActive;
 
   DecodeHandler(CaptureActivity activity) {
     this.activity = activity;
@@ -148,12 +151,70 @@ final class DecodeHandler extends Handler {
     long start = System.currentTimeMillis();
 
     try {
-      //Mat image = new Mat();
-      //Utils.bitmapToMat(bitmap,image);
-      //Mat gray = new Mat();
-      //Utils.bitmapToMat(bitmap,gray);
-      //OpencvNativeClass.BinarizeShafait(gray.getNativeObjAddr(),image.getNativeObjAddr());
-      //Utils.matToBitmap(image,bitmap);
+      isPreprocessingActive = activity.getPreprocessingFlag();
+      if(isPreprocessingActive) {
+        //Mat image = new Mat();
+        //Utils.bitmapToMat(bitmap,image);
+        Mat gray = new Mat();
+        Utils.bitmapToMat(bitmap, gray);
+        Imgproc.cvtColor(gray, gray, Imgproc.COLOR_BGR2GRAY);
+        //Utils.matToBitmap(gray,bitmap);
+
+        /** Code to Resize **/
+//
+//    int m_LargerDim = 2000;
+//
+//    int maxDim = max(gray.cols(), gray.rows());
+//    Mat rescaledImg;
+//    int orows = gray.rows();
+//    int ocols = gray.cols();
+//    double scale = m_LargerDim / maxDim;
+//    Imgproc.resize(gray, gray, Size, scale, scale, INTER_LANCZOS4);
+//    Imgproc.resize();
+
+        /********************/
+
+        Mat background = new Mat();
+        //Utils.bitmapToMat(bitmap,background);   //to test with BinarizeBG
+        Mat finalimage = new Mat();
+        //Utils.bitmapToMat(bitmap,finalimage);
+//
+//    finalimage.convertTo(finalimage,CvType.CV_8UC1);
+//    background.convertTo(background, CvType.CV_8UC1);
+        //OpencvNativeClass.BinarizeShafait(gray.getNativeObjAddr(),image.getNativeObjAddr());
+        OpencvNativeClass.BinarizeBG(background.getNativeObjAddr(), gray.getNativeObjAddr(), finalimage.getNativeObjAddr());
+//        Imgcodecs.imwrite("/storage/emulated/0/DCIM/original.jpg", gray);
+//        Imgcodecs.imwrite("/storage/emulated/0/DCIM/binarized.jpg", finalimage);
+//        Imgcodecs.imwrite("/storage/emulated/0/DCIM/background.jpg", background);
+
+        Utils.matToBitmap(finalimage, bitmap);
+
+        //Pix fimage = ReadFile.readBitmap(bitmap);
+        //fimage = Binarize.otsuAdaptiveThreshold(fimage);
+
+
+        //float angle = Skew.findSkew(fimage);
+        //Log.i("Skew: ", Float.toString(angle));
+        //double deg2rad = 3.14159265 / 180.;
+
+        //fimage = Rotate.rotate(fimage, angle);
+
+        //bitmap = WriteFile.writeBitmap(fimage);
+
+        //Mat skewed = new Mat();
+
+        //Utils.bitmapToMat(bitmap,skewed);
+        //Imgcodecs.imwrite("/storage/emulated/0/DCIM/deskewed.jpg", skewed);
+        //
+        //double deg2rad = 3.14159265 / 180.0;
+        //float fdeg2rad = (float)deg2rad;
+        //angle=angle*fdeg2rad;
+        //Log.i("Skew:(in degrees) ", Float.toString(angle));
+        //fimage = Rotate.rotate(fimage, angle, true);
+        //bitmap = WriteFile.writeBitmap(fimage);
+
+      }
+
       baseApi.setImage(ReadFile.readBitmap(bitmap));
       textResult = baseApi.getUTF8Text();
       timeRequired = System.currentTimeMillis() - start;

@@ -124,6 +124,7 @@ static {
    * Whether to initially disable continuous-picture and continuous-video focus modes.
    */
   public static final boolean DEFAULT_DISABLE_CONTINUOUS_FOCUS = true;
+  public static final boolean DEFAULT_DISABLE_PREPROCESSING = true;
 
   /**
    * Whether to beep by default when the shutter button is pressed.
@@ -165,6 +166,9 @@ static {
    * Flag to enable display of the on-screen shutter button.
    */
   private static final boolean DISPLAY_SHUTTER_BUTTON = true;
+
+  ///Settings for pre processing
+  private static final boolean PREPROCESSING_FLAG = false;
 
   /**
    * Languages for which Cube data is available.
@@ -241,6 +245,7 @@ static {
   private ShutterButton shutterButton;
   private boolean isTranslationActive; // Whether we want to show translations
   private boolean isContinuousModeActive; // Whether we are doing OCR in continuous mode
+  private boolean isPreprocessingFlagActive; // Whether we are doing OCR in continuous mode
   private SharedPreferences prefs;
   private OnSharedPreferenceChangeListener listener;
   private ProgressDialog dialog; // for initOcr - language download & unzip
@@ -311,7 +316,7 @@ static {
     translationView = (TextView) findViewById(R.id.translation_text_view);
     registerForContextMenu(translationView);
 
-    progressView = findViewById(R.id.indeterminate_progress_indicator_view);
+    progressView = (View)findViewById(R.id.indeterminate_progress_indicator_view);
 
     cameraManager = new CameraManager(getApplication());
     viewfinderView.setCameraManager(cameraManager);
@@ -390,6 +395,12 @@ static {
     });
 
     isEngineReady = false;
+    findViewById(R.id.settingsButton).setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        startActivity(new Intent().setClass(CaptureActivity.this, PreferencesActivity.class));
+      }
+    });
   }
 
 
@@ -398,7 +409,33 @@ static {
   @Override
   protected void onResume() {
     super.onResume();
-      checkPermissions();
+      //checkPermissions();
+    resetStatusView();
+    String previousSourceLanguageCodeOcr = sourceLanguageCodeOcr;
+    int previousOcrEngineMode = ocrEngineMode;
+    retrievePreferences();
+    //if(mKbWedge != null)
+    //  mKbWedge.onResume(); // must call this
+    // Set up the camera preview surface.
+    surfaceView = (SurfaceView) findViewById(R.id.preview_view);
+    surfaceHolder = surfaceView.getHolder();
+    if (!hasSurface) {
+      surfaceHolder.addCallback(this);
+      surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+    }
+    // Do OCR engine initialization, if necessary
+    boolean doNewInit = (baseApi == null) || !sourceLanguageCodeOcr.equals(previousSourceLanguageCodeOcr) ||
+            ocrEngineMode != previousOcrEngineMode;
+    if (doNewInit) {
+      // Initialize the OCR engine
+      File storageDirectory = getStorageDirectory();
+      if (storageDirectory != null) {
+        initOcrEngine(storageDirectory, sourceLanguageCodeOcr, sourceLanguageReadable);
+      }
+    } else {
+      // We already have the engine initialized, so just start the camera.
+      resumeOCR();
+    }
   }
 
   /**
@@ -421,7 +458,7 @@ static {
     if (baseApi != null) {
       baseApi.setPageSegMode(pageSegmentationMode);
       //baseApi.setVariable(TessBaseAPI.VAR_CHAR_BLACKLIST, characterBlacklist);
-      baseApi.setVariable(TessBaseAPI.VAR_CHAR_BLACKLIST, "_.,/~`\"\'?!;+*%$");
+      baseApi.setVariable(TessBaseAPI.VAR_CHAR_BLACKLIST, "_/~`\"\'?!;*%$");
       baseApi.setVariable(TessBaseAPI.VAR_CHAR_WHITELIST, characterWhitelist);
     }
 
@@ -549,6 +586,7 @@ static {
       }
 
       // Exit the app if we're not viewing an OCR result.
+      //possible crash
       if (lastResult == null) {
         setResult(RESULT_CANCELED);
         finish();
@@ -879,7 +917,7 @@ static {
         String name = lines[0];
         String cityStateZip = lines[lines.length - 1];
         int addressLinesIndex=1;
-        if(lines.length==9){
+        if(lines.length==6){
           mKbWedge.Write(name);
           mKbWedge.Write("\t");
           mKbWedge.Write(lines[1]);
@@ -896,7 +934,7 @@ static {
         Result += "<TAB>";
         // write at most 3 address lines
         int addressLineCount = 0;
-        for (int i = addressLinesIndex; i < lines.length && addressLineCount < 8; ++i) {
+        for (int i = addressLinesIndex; i < lines.length - 1 && addressLineCount < 3; ++i) {
            Log.d("indexes:",Integer.toString(i));
           Log.d("adl:",Integer.toString(addressLineCount));
 
@@ -907,7 +945,7 @@ static {
           Log.d("kbwedge",lines[i]);
         }
         // if less than 3 address lines were written, write tabs for the missed
-        for (int i = addressLineCount; i < 8; ++i) {
+        for (int i = addressLineCount; i < 3; ++i) {
           //writeText(outputStream, "\t");
           mKbWedge.Write("\t");
           Result += "<TAB>";
@@ -1107,9 +1145,9 @@ static {
         }
         return true;
       case OPTIONS_SHARE_RECOGNIZED_TEXT_ID:
-        Intent shareRecognizedTextIntent = new Intent(android.content.Intent.ACTION_SEND);
+        Intent shareRecognizedTextIntent = new Intent(Intent.ACTION_SEND);
         shareRecognizedTextIntent.setType("text/plain");
-        shareRecognizedTextIntent.putExtra(android.content.Intent.EXTRA_TEXT, ocrResultView.getText());
+        shareRecognizedTextIntent.putExtra(Intent.EXTRA_TEXT, ocrResultView.getText());
         startActivity(Intent.createChooser(shareRecognizedTextIntent, "Share via"));
         return true;
       case OPTIONS_COPY_TRANSLATED_TEXT_ID:
@@ -1121,9 +1159,9 @@ static {
         }
         return true;
       case OPTIONS_SHARE_TRANSLATED_TEXT_ID:
-        Intent shareTranslatedTextIntent = new Intent(android.content.Intent.ACTION_SEND);
+        Intent shareTranslatedTextIntent = new Intent(Intent.ACTION_SEND);
         shareTranslatedTextIntent.setType("text/plain");
-        shareTranslatedTextIntent.putExtra(android.content.Intent.EXTRA_TEXT, translationView.getText());
+        shareTranslatedTextIntent.putExtra(Intent.EXTRA_TEXT, translationView.getText());
         startActivity(Intent.createChooser(shareTranslatedTextIntent, "Share via"));
         return true;
       default:
@@ -1299,6 +1337,8 @@ static {
 
     // Retrieve from preferences, and set in this Activity, the capture mode preference
       isContinuousModeActive = prefs.getBoolean(PreferencesActivity.KEY_CONTINUOUS_PREVIEW, CaptureActivity.DEFAULT_TOGGLE_CONTINUOUS);
+    isPreprocessingFlagActive = prefs.getBoolean(PreferencesActivity.KEY_ENABLE_PREPROCESSING, CaptureActivity.PREPROCESSING_FLAG);
+
 
     // Retrieve from preferences, and set in this Activity, the page segmentation mode preference
     String[] pageSegmentationModes = getResources().getStringArray(R.array.pagesegmentationmodes);
@@ -1390,6 +1430,13 @@ static {
             .putBoolean(PreferencesActivity.KEY_DISABLE_CONTINUOUS_FOCUS,
                     CaptureActivity.DEFAULT_DISABLE_CONTINUOUS_FOCUS)
             .apply();
+
+    //Disable preprocessing
+    prefs.edit()
+            .putBoolean(PreferencesActivity.KEY_ENABLE_PREPROCESSING,
+                    CaptureActivity.PREPROCESSING_FLAG)
+            .apply();
+
 
     // Beep
     prefs.edit()
@@ -1508,6 +1555,9 @@ private void checkPermissions() {
 boolean isCameraPermissionGranted() {
     return ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
 }
+  boolean getPreprocessingFlag() {
+    return isPreprocessingFlagActive;
+  }
 boolean isWriteToExternalStoragePermissionGranted() {
     return ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
 }
